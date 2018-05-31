@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14133" systemVersion="17E202" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="NetworkCarrier" representedClassName="NetworkCarrier" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Settings" representedClassName="Settings" syncable="YES" codeGenerationType="class">
+        <attribute name="airplaneMode" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="bluetooth" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="doNotDisturb" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="mobileData" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="notification" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="networkCarrier" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="NetworkCarrier" syncable="YES"/>
+        <relationship name="wiFi" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="WiFi" syncable="YES"/>
+    </entity>
+    <entity name="WiFi" representedClassName="WiFi" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Settings" positionX="-5285" positionY="-2898" width="128" height="148"/>
+        <element name="WiFi" positionX="-5186" positionY="-2664" width="128" height="73"/>
+        <element name="NetworkCarrier" positionX="-5438" positionY="-2664" width="128" height="73"/>
+    </elements>
+</model>
