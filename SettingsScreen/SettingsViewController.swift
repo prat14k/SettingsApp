@@ -10,14 +10,47 @@ import UIKit
 
 class SettingsViewController: UIViewController {
 
-    let data: [String] = {
-        var a = [String]()
-        for i in 0...20 {
-            a.append(UUID().uuidString)
-        }
-        return a
-    }()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     var filtereddata = [String]()
+    
+    var data = [
+        [
+            ["cellIdentifier" : "switchCellIdentifier", "state" : false, "title": "Airplane Mode"],
+            ["cellIdentifier" : "disclosureCellIdentifier", "state" : false,  "title": "WiFi", "subtitle" : "cham"],
+            ["cellIdentifier" : "disclosureCellIdentifier", "state" : false,  "title": "Bluetooth", "subtitle" : "cham"],
+            ["cellIdentifier" : "disclosureCellIdentifier", "state" : false,  "title": "Mobile Data", "subtitle" : ""],
+            ["cellIdentifier" : "disclosureCellIdentifier", "state" : false,  "title": "Carrier", "subtitle" : "cham"]
+        ],
+        [
+            ["cellIdentifier" : "disclosureCellIdentifier", "state" : false,  "title": "Notifications", "subtitle" : ""],
+            ["cellIdentifier" : "disclosureCellIdentifier", "state" : false,  "title": "Do Not Disturb", "subtitle" : ""]
+        ],
+        [
+            ["cellIdentifier" : "disclosureCellIdentifier", "state" : false,  "title": "General", "subtitle" : ""],
+            ["cellIdentifier" : "disclosureCellIdentifier", "state" : false,  "title": "Wallpaper", "subtitle" : ""],
+            ["cellIdentifier" : "disclosureCellIdentifier", "state" : false,  "title": "Display & Brightness", "subtitle" : ""]
+        ]
+    ]
 
     
     @IBOutlet weak private var settingsTableView: UITableView! {
@@ -41,7 +74,7 @@ class SettingsViewController: UIViewController {
         super.viewDidLoad()
         
         // Setup the Search Controller
-        setupSearchBar()
+//        setupSearchBar()
         
     }
     
@@ -60,27 +93,41 @@ class SettingsViewController: UIViewController {
         searchController.searchBar.delegate = self
     }
     
-    // MARK: - Private instance methods
-    func filterContent(searchText: String) {
-        filtereddata = data.filter({(text: String) -> Bool in
-            return text.lowercased().contains(searchText.lowercased())
-        })
-        settingsTableView.reloadData()
-    }
+//    // MARK: - Private instance methods
+//    func filterContent(searchText: String) {
+//        filtereddata = data.filter({(text: String) -> Bool in
+//            return text.lowercased().contains(searchText.lowercased())
+//        })
+//        settingsTableView.reloadData()
+//    }
 }
 
 extension SettingsViewController: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return data.count
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return isFiltering ? filtereddata.count : data.count
+//        return isFiltering ? filtereddata.count : data.count
+        return data[section].count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = isFiltering ? filtereddata[indexPath.row] : data[indexPath.row]
+        let cellData = data[indexPath.section][indexPath.row]
+        
+        switch cellData["cellIdentifier"] as! String {
+        case DisclosureTableViewCell.identifier :
+            let cell = tableView.dequeueReusableCell(withIdentifier: DisclosureTableViewCell.identifier, for: indexPath) as! DisclosureTableViewCell
+            cell.setup(details: cellData)
+            return cell
+        case SwitchTableViewCell.identifier :
+            let cell = tableView.dequeueReusableCell(withIdentifier: SwitchTableViewCell.identifier, for: indexPath) as! SwitchTableViewCell
+        cell.setup(details: cellData)
         return cell
+        default:
+            print("not found \(cellData)")
+        }
+        
+        return UITableViewCell()
     }
     
 }
@@ -89,7 +136,7 @@ extension SettingsViewController: UITableViewDelegate { }
 
 extension SettingsViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
-        filterContent(searchText: searchController.searchBar.text!)
+//        filterContent(searchText: searchController.searchBar.text!)
     }
 }
 

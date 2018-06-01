@@ -1,0 +1,11 @@
+SettingsScreen/Model/NetworkCarrier+CoreDataClass.swift
+SettingsScreen/Model/NetworkCarrier+CoreDataProperties.swift
+SettingsScreen/Model/Settings+CoreDataClass.swift
+SettingsScreen/Model/Settings+CoreDataProperties.swift
+SettingsScreen/Model/WiFi+CoreDataClass.swift
+SettingsScreen/Model/WiFi+CoreDataProperties.swift
+SettingsScreen.xcworkspace
+SettingsScreen/SettingsModel.xcdatamodeld
+SettingsScreen/Settings.xcdatamodeld
+Pods
+.DS_Store
