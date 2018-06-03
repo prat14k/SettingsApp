@@ -30,9 +30,10 @@ class DisclosureTableViewCell: UITableViewCell {
     }
     
     
-    func setup(details: [String: Any]) {
-        title.text = details["title"] as? String
-        subTitle.text = details["subtitle"] as? String
+    func setup(details: DisclosureCellModel, subtitle: String?) {
+        title.text = details.title
+        subTitle.text = subtitle
+        
     }
     
 }

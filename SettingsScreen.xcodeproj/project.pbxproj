@@ -8,10 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		44911EF133DF5477C65DAC89 /* Pods_SettingsScreen.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FC6B31729495A99301584D9 /* Pods_SettingsScreen.framework */; };
+		AB18040520C14AC00086867F /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB18040420C14AC00086867F /* Settings.swift */; };
+		AB18040720C14C220086867F /* Wifi.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB18040620C14C220086867F /* Wifi.swift */; };
+		AB18040920C14D970086867F /* Carrier.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB18040820C14D970086867F /* Carrier.swift */; };
 		AB9BE7F320C11E0600025896 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9BE7F220C11E0600025896 /* UIColorExtension.swift */; };
 		AB9BE7F720C11FCC00025896 /* SwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9BE7F620C11FCC00025896 /* SwitchTableViewCell.swift */; };
 		AB9BE7F920C11FEB00025896 /* DisclosureTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9BE7F820C11FEB00025896 /* DisclosureTableViewCell.swift */; };
 		AB9BE80A20C13AB400025896 /* SettingsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9BE80920C13AB400025896 /* SettingsKeys.swift */; };
+		ABBDEC8720C2A4B20047E80C /* RealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBDEC8620C2A4B20047E80C /* RealmService.swift */; };
+		ABBDEC8920C2A6540047E80C /* StringLiterals.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBDEC8820C2A6540047E80C /* StringLiterals.swift */; };
+		ABBDEC8B20C2C1600047E80C /* SettingsCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBDEC8A20C2C1600047E80C /* SettingsCellModel.swift */; };
 		ABDFA1F120BFF03E004AC553 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABDFA1F020BFF03E004AC553 /* AppDelegate.swift */; };
 		ABDFA1F320BFF03E004AC553 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABDFA1F220BFF03E004AC553 /* SettingsViewController.swift */; };
 		ABDFA1F620BFF03E004AC553 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABDFA1F420BFF03E004AC553 /* Main.storyboard */; };
@@ -22,10 +28,16 @@
 /* Begin PBXFileReference section */
 		1FC6B31729495A99301584D9 /* Pods_SettingsScreen.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SettingsScreen.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4C689748C3EC5DF6909E8B2 /* Pods-SettingsScreen.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SettingsScreen.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SettingsScreen/Pods-SettingsScreen.debug.xcconfig"; sourceTree = "<group>"; };
+		AB18040420C14AC00086867F /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		AB18040620C14C220086867F /* Wifi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wifi.swift; sourceTree = "<group>"; };
+		AB18040820C14D970086867F /* Carrier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Carrier.swift; sourceTree = "<group>"; };
 		AB9BE7F220C11E0600025896 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		AB9BE7F620C11FCC00025896 /* SwitchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchTableViewCell.swift; sourceTree = "<group>"; };
 		AB9BE7F820C11FEB00025896 /* DisclosureTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisclosureTableViewCell.swift; sourceTree = "<group>"; };
 		AB9BE80920C13AB400025896 /* SettingsKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsKeys.swift; sourceTree = "<group>"; };
+		ABBDEC8620C2A4B20047E80C /* RealmService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmService.swift; sourceTree = "<group>"; };
+		ABBDEC8820C2A6540047E80C /* StringLiterals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringLiterals.swift; sourceTree = "<group>"; };
+		ABBDEC8A20C2C1600047E80C /* SettingsCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCellModel.swift; sourceTree = "<group>"; };
 		ABDFA1ED20BFF03E004AC553 /* SettingsScreen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SettingsScreen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABDFA1F020BFF03E004AC553 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ABDFA1F220BFF03E004AC553 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
@@ -68,6 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				AB9BE80920C13AB400025896 /* SettingsKeys.swift */,
+				ABBDEC8820C2A6540047E80C /* StringLiterals.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -84,6 +97,11 @@
 		AB9BE7FA20C120FE00025896 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				AB18040420C14AC00086867F /* Settings.swift */,
+				AB18040620C14C220086867F /* Wifi.swift */,
+				AB18040820C14D970086867F /* Carrier.swift */,
+				ABBDEC8620C2A4B20047E80C /* RealmService.swift */,
+				ABBDEC8A20C2C1600047E80C /* SettingsCellModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -249,9 +267,15 @@
 				AB9BE7F920C11FEB00025896 /* DisclosureTableViewCell.swift in Sources */,
 				AB9BE80A20C13AB400025896 /* SettingsKeys.swift in Sources */,
 				AB9BE7F320C11E0600025896 /* UIColorExtension.swift in Sources */,
+				ABBDEC8920C2A6540047E80C /* StringLiterals.swift in Sources */,
+				AB18040920C14D970086867F /* Carrier.swift in Sources */,
 				ABDFA1F320BFF03E004AC553 /* SettingsViewController.swift in Sources */,
+				AB18040720C14C220086867F /* Wifi.swift in Sources */,
+				AB18040520C14AC00086867F /* Settings.swift in Sources */,
 				ABDFA1F120BFF03E004AC553 /* AppDelegate.swift in Sources */,
 				AB9BE7F720C11FCC00025896 /* SwitchTableViewCell.swift in Sources */,
+				ABBDEC8720C2A4B20047E80C /* RealmService.swift in Sources */,
+				ABBDEC8B20C2C1600047E80C /* SettingsCellModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

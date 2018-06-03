@@ -9,17 +9,32 @@
 import Foundation
 
 
-enum UserDefaultKeys {
+enum SettingObserverKeys: String {
+
+    case airplaneMode = "airplaneMode"
+    case wiFi = "wiFi"
+    case bluetooth = "bluetooth"
+    case mobileData = "mobileData"
+    case carrier = "carrier"
+    case notifications = "notifications"
+    case doNotDisturb = "doNotDisturb"
+    case none
+}
+
+
+enum SettingType {
     
-    static let settings = "userSettings"
-    
-    static let airplaneMode = "airplaneMode"        // Stores a Bool
-    static let bluetooth = "bluetooth"              // Stores a Bool
-    static let doNotDisturb = "doNotDisturb"        // Stores a Bool
-    static let mobileData = "mobileData"            // Stores a Bool
-    static let notifications = "notifications"      // Stores a Bool
-    
-    static let wifiUID = "wifi"                     // Stores a String
-    static let carrierUID = "carrier"               // Stores a String
+    case airplaneMode
+    case wiFi
+    case bluetooth
+    case mobileData
+    case carrier
+    case notifications
+    case doNotDisturb
+    case general
+    case wallpaper
+    case display
     
 }
+
+

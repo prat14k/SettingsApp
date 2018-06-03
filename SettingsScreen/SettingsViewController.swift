@@ -11,47 +11,28 @@ import UIKit
 class SettingsViewController: UIViewController {
 
     
+    let tableDataSource: [[SettingsCellModel]] = [
+                            [
+                                SwitchCellModel(title: StringLiterals.airplaneMode, key: SettingObserverKeys.airplaneMode, type: SettingType.airplaneMode),
+                                DisclosureCellModel(title: StringLiterals.wiFi, key: SettingObserverKeys.wiFi, type: SettingType.wiFi),
+                                DisclosureCellModel(title: StringLiterals.bluetooth, key: SettingObserverKeys.bluetooth, type: SettingType.bluetooth),
+                                DisclosureCellModel(title: StringLiterals.mobileData, key: SettingObserverKeys.mobileData, type: SettingType.mobileData),
+                                DisclosureCellModel(title: StringLiterals.carrier, key: SettingObserverKeys.carrier, type: SettingType.carrier)
+                            ],
+                            [
+                                DisclosureCellModel(title: StringLiterals.notifications, key: SettingObserverKeys.notifications, type: SettingType.notifications),
+                                DisclosureCellModel(title: StringLiterals.doNotDisturb, key: SettingObserverKeys.doNotDisturb, type: SettingType.doNotDisturb)
+                            ],
+                            [
+                                DisclosureCellModel(title: StringLiterals.general, key: .none, type: SettingType.general),
+                                DisclosureCellModel(title: StringLiterals.wallpaper, key: .none, type: SettingType.wallpaper),
+                                DisclosureCellModel(title: StringLiterals.display, key: .none, type: SettingType.display)
+                            ]
+                        ]
     
     
+    var filteredSettings = [SettingsCellModel]()
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    var filtereddata = [String]()
-    
-    var data = [
-        [
-            ["cellIdentifier" : "switchCellIdentifier", "state" : false, "title": "Airplane Mode"],
-            ["cellIdentifier" : "disclosureCellIdentifier", "state" : false,  "title": "WiFi", "subtitle" : "cham"],
-            ["cellIdentifier" : "disclosureCellIdentifier", "state" : false,  "title": "Bluetooth", "subtitle" : "cham"],
-            ["cellIdentifier" : "disclosureCellIdentifier", "state" : false,  "title": "Mobile Data", "subtitle" : ""],
-            ["cellIdentifier" : "disclosureCellIdentifier", "state" : false,  "title": "Carrier", "subtitle" : "cham"]
-        ],
-        [
-            ["cellIdentifier" : "disclosureCellIdentifier", "state" : false,  "title": "Notifications", "subtitle" : ""],
-            ["cellIdentifier" : "disclosureCellIdentifier", "state" : false,  "title": "Do Not Disturb", "subtitle" : ""]
-        ],
-        [
-            ["cellIdentifier" : "disclosureCellIdentifier", "state" : false,  "title": "General", "subtitle" : ""],
-            ["cellIdentifier" : "disclosureCellIdentifier", "state" : false,  "title": "Wallpaper", "subtitle" : ""],
-            ["cellIdentifier" : "disclosureCellIdentifier", "state" : false,  "title": "Display & Brightness", "subtitle" : ""]
-        ]
-    ]
-
     
     @IBOutlet weak private var settingsTableView: UITableView! {
         didSet {
@@ -105,29 +86,35 @@ class SettingsViewController: UIViewController {
 extension SettingsViewController: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return data.count
+        return tableDataSource.count
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 //        return isFiltering ? filtereddata.count : data.count
-        return data[section].count
+        return tableDataSource[section].count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cellData = data[indexPath.section][indexPath.row]
+        let cellData = tableDataSource[indexPath.section][indexPath.row]
         
-        switch cellData["cellIdentifier"] as! String {
-        case DisclosureTableViewCell.identifier :
-            let cell = tableView.dequeueReusableCell(withIdentifier: DisclosureTableViewCell.identifier, for: indexPath) as! DisclosureTableViewCell
-            cell.setup(details: cellData)
-            return cell
-        case SwitchTableViewCell.identifier :
+        switch cellData {
+        case let data as SwitchCellModel:
             let cell = tableView.dequeueReusableCell(withIdentifier: SwitchTableViewCell.identifier, for: indexPath) as! SwitchTableViewCell
-        cell.setup(details: cellData)
-        return cell
+            cell.setup(details: data, isOn: Settings.settings.value(forKey: data.key.rawValue) as! Bool)
+            return cell
+        case let data as DisclosureCellModel:
+            let cell = tableView.dequeueReusableCell(withIdentifier: DisclosureTableViewCell.identifier, for: indexPath) as! DisclosureTableViewCell
+            var subtitle: String?
+            switch data.type {
+            case SettingType.wiFi : subtitle = Settings.settings.wiFi?.name
+            case SettingType.carrier : subtitle = Settings.settings.carrier?.name
+            case SettingType.bluetooth : subtitle = Settings.settings.bluetooth ? "On" : "Off"
+            default : subtitle = ""
+            }
+            cell.setup(details: data, subtitle: subtitle)
+            return cell
         default:
-            print("not found \(cellData)")
+            return UITableViewCell()
         }
         
-        return UITableViewCell()
     }
     
 }

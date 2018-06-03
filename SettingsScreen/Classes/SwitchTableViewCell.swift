@@ -12,6 +12,8 @@ class SwitchTableViewCell: UITableViewCell {
 
     static let identifier = "switchCellIdentifier"
     
+    var updationKey: String!
+    
     @IBOutlet weak var coloredView: UIView! {
         didSet {
             coloredView.backgroundColor = UIColor.random
@@ -23,10 +25,10 @@ class SwitchTableViewCell: UITableViewCell {
     @IBOutlet weak var toggleSwitch: UISwitch!
     
     
-    func setup(details: [String: Any]) {
-        title.text = details["title"] as? String
-        toggleSwitch.isOn = details["state"] as! Bool
-        
+    func setup(details: SwitchCellModel, isOn: Bool) {
+        title.text = details.title
+        updationKey = details.key.rawValue
+        toggleSwitch.isOn = isOn
     }
     
     override func layoutSubviews() {
@@ -37,7 +39,11 @@ class SwitchTableViewCell: UITableViewCell {
     
     
     @IBAction func valueChanged(_ sender: UISwitch) {
-        print(sender.isOn)
+        do {
+            try RealmService.shared.update(object: Settings.settings, with: [updationKey: sender.isOn, "carrier" : Carrier.connections[Int(arc4random_uniform(5))]])
+        } catch {
+            print(error)
+        }
     }
     
 }
