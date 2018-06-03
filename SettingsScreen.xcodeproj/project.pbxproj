@@ -68,6 +68,32 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		AB83DAAE20C3DCAF001CCBAC /* TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				AB9BE7F620C11FCC00025896 /* SwitchTableViewCell.swift */,
+				AB9BE7F820C11FEB00025896 /* DisclosureTableViewCell.swift */,
+			);
+			path = TableViewCells;
+			sourceTree = "<group>";
+		};
+		AB83DAAF20C3DCF0001CCBAC /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				ABBDEC8620C2A4B20047E80C /* RealmService.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		AB83DAB020C3DD09001CCBAC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				ABDFA1F420BFF03E004AC553 /* Main.storyboard */,
+				ABDFA1F920BFF040004AC553 /* LaunchScreen.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		AB9BE7F120C11DF400025896 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -88,8 +114,8 @@
 		AB9BE7F520C11FAE00025896 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				AB9BE7F620C11FCC00025896 /* SwitchTableViewCell.swift */,
-				AB9BE7F820C11FEB00025896 /* DisclosureTableViewCell.swift */,
+				AB83DAAE20C3DCAF001CCBAC /* TableViewCells */,
+				ABDFA1F220BFF03E004AC553 /* SettingsViewController.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -100,7 +126,6 @@
 				AB18040420C14AC00086867F /* Settings.swift */,
 				AB18040620C14C220086867F /* Wifi.swift */,
 				AB18040820C14D970086867F /* Carrier.swift */,
-				ABBDEC8620C2A4B20047E80C /* RealmService.swift */,
 				ABBDEC8A20C2C1600047E80C /* SettingsCellModel.swift */,
 			);
 			path = Model;
@@ -128,14 +153,13 @@
 			isa = PBXGroup;
 			children = (
 				AB9BE7FA20C120FE00025896 /* Model */,
+				AB83DAB020C3DD09001CCBAC /* Views */,
 				AB9BE7F520C11FAE00025896 /* Classes */,
 				AB9BE7F420C11F5A00025896 /* Constants */,
 				AB9BE7F120C11DF400025896 /* Extensions */,
+				AB83DAAF20C3DCF0001CCBAC /* Helpers */,
 				ABDFA1F020BFF03E004AC553 /* AppDelegate.swift */,
-				ABDFA1F220BFF03E004AC553 /* SettingsViewController.swift */,
-				ABDFA1F420BFF03E004AC553 /* Main.storyboard */,
 				ABDFA1F720BFF040004AC553 /* Assets.xcassets */,
-				ABDFA1F920BFF040004AC553 /* LaunchScreen.storyboard */,
 				ABDFA1FC20BFF040004AC553 /* Info.plist */,
 			);
 			path = SettingsScreen;
