@@ -8,6 +8,8 @@
 
 import UIKit
 
+
+
 class SwitchTableViewCell: UITableViewCell {
 
     static let identifier = "switchCellIdentifier"

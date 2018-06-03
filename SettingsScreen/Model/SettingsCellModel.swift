@@ -9,9 +9,21 @@
 import Foundation
 
 
+struct TableSectionModel {
+    var header: String?
+    var footer: String?
+    var cellsData: [SettingsCellModel]
+    
+    init(cellsData: [SettingsCellModel], header: String? = nil, footer: String? = nil) {
+        self.cellsData = cellsData
+        self.header = header
+        self.footer = footer
+    }
+}
+
+
 protocol SettingsCellModel {
     var title: String { get }
-    var key: SettingObserverKeys { get }
     var type: SettingType { get }
 }
 
@@ -20,6 +32,7 @@ struct SwitchCellModel: SettingsCellModel{
     let title: String
     let key: SettingObserverKeys
     let type: SettingType
+    
 
     init(title: String, key: SettingObserverKeys, type: SettingType) {
         self.title = title
@@ -31,12 +44,11 @@ struct SwitchCellModel: SettingsCellModel{
 
 struct DisclosureCellModel: SettingsCellModel{
     let title: String
-    let key: SettingObserverKeys
     let type: SettingType
     
-    init(title: String, key: SettingObserverKeys, type: SettingType) {
+    
+    init(title: String, type: SettingType) {
         self.title = title
         self.type = type
-        self.key = key
     }
 }

@@ -8,25 +8,28 @@
 
 import UIKit
 
+
+
+
 class SettingsViewController: UIViewController {
 
     
     let tableDataSource: [[SettingsCellModel]] = [
                             [
                                 SwitchCellModel(title: StringLiterals.airplaneMode, key: SettingObserverKeys.airplaneMode, type: SettingType.airplaneMode),
-                                DisclosureCellModel(title: StringLiterals.wiFi, key: SettingObserverKeys.wiFi, type: SettingType.wiFi),
-                                DisclosureCellModel(title: StringLiterals.bluetooth, key: SettingObserverKeys.bluetooth, type: SettingType.bluetooth),
-                                DisclosureCellModel(title: StringLiterals.mobileData, key: SettingObserverKeys.mobileData, type: SettingType.mobileData),
-                                DisclosureCellModel(title: StringLiterals.carrier, key: SettingObserverKeys.carrier, type: SettingType.carrier)
+                                DisclosureCellModel(title: StringLiterals.wiFi, type: SettingType.wiFi),
+                                DisclosureCellModel(title: StringLiterals.bluetooth, type: SettingType.bluetooth),
+                                DisclosureCellModel(title: StringLiterals.mobileData, type: SettingType.mobileData),
+                                DisclosureCellModel(title: StringLiterals.carrier, type: SettingType.carrier)
                             ],
                             [
-                                DisclosureCellModel(title: StringLiterals.notifications, key: SettingObserverKeys.notifications, type: SettingType.notifications),
-                                DisclosureCellModel(title: StringLiterals.doNotDisturb, key: SettingObserverKeys.doNotDisturb, type: SettingType.doNotDisturb)
+                                DisclosureCellModel(title: StringLiterals.notifications, type: SettingType.notifications),
+                                DisclosureCellModel(title: StringLiterals.doNotDisturb, type: SettingType.doNotDisturb)
                             ],
                             [
-                                DisclosureCellModel(title: StringLiterals.general, key: .none, type: SettingType.general),
-                                DisclosureCellModel(title: StringLiterals.wallpaper, key: .none, type: SettingType.wallpaper),
-                                DisclosureCellModel(title: StringLiterals.display, key: .none, type: SettingType.display)
+                                DisclosureCellModel(title: StringLiterals.general, type: SettingType.general),
+                                DisclosureCellModel(title: StringLiterals.wallpaper, type: SettingType.wallpaper),
+                                DisclosureCellModel(title: StringLiterals.display, type: SettingType.display)
                             ]
                         ]
     
@@ -49,6 +52,32 @@ class SettingsViewController: UIViewController {
         searchController.searchBar.placeholder = "Search"
         return searchController
     }()
+    
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == SegueIdentifier.toggledSettingWindow {
+            if let vc = segue.destination as? SingleSettingViewController, let settingType = sender as? SettingType {
+                switch settingType {
+                case .mobileData:
+                    vc.navBarTitle = StringLiterals.mobileData
+                    vc.tableDataSource = DataSource.cellularDataTableDB
+                case .bluetooth:
+                    vc.navBarTitle = StringLiterals.bluetooth
+                    vc.tableDataSource = DataSource.bluetoothTableDB
+                case .notifications:
+                    vc.navBarTitle = StringLiterals.notifications
+                    vc.tableDataSource = DataSource.notificationsTableDB
+                case .doNotDisturb:
+                    vc.navBarTitle = StringLiterals.doNotDisturb
+                    vc.tableDataSource = DataSource.doNotDisturbTableDB
+                default: print("Unknown Type")
+                }
+            }
+            
+        }
+    }
+    
     
     // MARK: - View Setup
     override func viewDidLoad() {
@@ -151,10 +180,8 @@ extension SettingsViewController: UITableViewDelegate {
             presentWifiOptions()
         case .carrier:
             presentCarrierOptions()
-        case .mobileData:
-            performSegue(withIdentifier: SegueIdentifier.cellularDataWindow, sender: nil)
-        case .bluetooth:
-            performSegue(withIdentifier: SegueIdentifier.bluetoothWindow, sender: nil)
+        case .mobileData, .notifications, .bluetooth, .doNotDisturb:
+            performSegue(withIdentifier: SegueIdentifier.toggledSettingWindow, sender: cellType)
         default:
             print("as")
         }

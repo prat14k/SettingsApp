@@ -13,5 +13,6 @@ enum SegueIdentifier {
     
     static let cellularDataWindow = "cellularDataWindow"
     static let bluetoothWindow = "bluetoothWindow"
+    static let toggledSettingWindow = "toggledSettingWindow"
     
 }

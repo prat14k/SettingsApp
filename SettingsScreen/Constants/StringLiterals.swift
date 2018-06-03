@@ -25,6 +25,7 @@ enum StringLiterals {
     
     static let cellularData = "Cellular Data"
     static let cellularDataOptions = "Cellular Data Options"
-    static let cellularDataSection0FooterText = "Turn off cellular data to restrict all data to Wi-Fi, including email, web browsing and push notifications."
+    static let cellularDataHelpText = "Turn off cellular data to restrict all data to Wi-Fi, including email, web browsing and push notifications."
     
+    static let doNotDisturbHelpText = "When Do Not Disturb is enabled, calls and alerts that arrive while locked will be silenced, and a moon icon will appear in the status bar."
 }
