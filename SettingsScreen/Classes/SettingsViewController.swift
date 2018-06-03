@@ -151,6 +151,10 @@ extension SettingsViewController: UITableViewDelegate {
             presentWifiOptions()
         case .carrier:
             presentCarrierOptions()
+        case .mobileData:
+            performSegue(withIdentifier: SegueIdentifier.cellularDataWindow, sender: nil)
+        case .bluetooth:
+            performSegue(withIdentifier: SegueIdentifier.bluetoothWindow, sender: nil)
         default:
             print("as")
         }

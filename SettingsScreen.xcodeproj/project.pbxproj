@@ -11,6 +11,10 @@
 		AB18040520C14AC00086867F /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB18040420C14AC00086867F /* Settings.swift */; };
 		AB18040720C14C220086867F /* Wifi.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB18040620C14C220086867F /* Wifi.swift */; };
 		AB18040920C14D970086867F /* Carrier.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB18040820C14D970086867F /* Carrier.swift */; };
+		AB83DAB220C3FCA9001CCBAC /* CellularViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB83DAB120C3FCA9001CCBAC /* CellularViewController.swift */; };
+		AB83DAB420C41790001CCBAC /* SegueIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB83DAB320C41790001CCBAC /* SegueIdentifiers.swift */; };
+		AB83DAB620C433C3001CCBAC /* BluetoothViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB83DAB520C433C3001CCBAC /* BluetoothViewController.swift */; };
+		AB83DAB820C436B5001CCBAC /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB83DAB720C436B5001CCBAC /* NotificationsViewController.swift */; };
 		AB9BE7F320C11E0600025896 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9BE7F220C11E0600025896 /* UIColorExtension.swift */; };
 		AB9BE7F720C11FCC00025896 /* SwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9BE7F620C11FCC00025896 /* SwitchTableViewCell.swift */; };
 		AB9BE7F920C11FEB00025896 /* DisclosureTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9BE7F820C11FEB00025896 /* DisclosureTableViewCell.swift */; };
@@ -31,6 +35,10 @@
 		AB18040420C14AC00086867F /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		AB18040620C14C220086867F /* Wifi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wifi.swift; sourceTree = "<group>"; };
 		AB18040820C14D970086867F /* Carrier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Carrier.swift; sourceTree = "<group>"; };
+		AB83DAB120C3FCA9001CCBAC /* CellularViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellularViewController.swift; sourceTree = "<group>"; };
+		AB83DAB320C41790001CCBAC /* SegueIdentifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegueIdentifiers.swift; sourceTree = "<group>"; };
+		AB83DAB520C433C3001CCBAC /* BluetoothViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothViewController.swift; sourceTree = "<group>"; };
+		AB83DAB720C436B5001CCBAC /* NotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
 		AB9BE7F220C11E0600025896 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		AB9BE7F620C11FCC00025896 /* SwitchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchTableViewCell.swift; sourceTree = "<group>"; };
 		AB9BE7F820C11FEB00025896 /* DisclosureTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisclosureTableViewCell.swift; sourceTree = "<group>"; };
@@ -107,6 +115,7 @@
 			children = (
 				AB9BE80920C13AB400025896 /* SettingsKeys.swift */,
 				ABBDEC8820C2A6540047E80C /* StringLiterals.swift */,
+				AB83DAB320C41790001CCBAC /* SegueIdentifiers.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -116,6 +125,9 @@
 			children = (
 				AB83DAAE20C3DCAF001CCBAC /* TableViewCells */,
 				ABDFA1F220BFF03E004AC553 /* SettingsViewController.swift */,
+				AB83DAB120C3FCA9001CCBAC /* CellularViewController.swift */,
+				AB83DAB520C433C3001CCBAC /* BluetoothViewController.swift */,
+				AB83DAB720C436B5001CCBAC /* NotificationsViewController.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -292,6 +304,7 @@
 				AB9BE80A20C13AB400025896 /* SettingsKeys.swift in Sources */,
 				AB9BE7F320C11E0600025896 /* UIColorExtension.swift in Sources */,
 				ABBDEC8920C2A6540047E80C /* StringLiterals.swift in Sources */,
+				AB83DAB420C41790001CCBAC /* SegueIdentifiers.swift in Sources */,
 				AB18040920C14D970086867F /* Carrier.swift in Sources */,
 				ABDFA1F320BFF03E004AC553 /* SettingsViewController.swift in Sources */,
 				AB18040720C14C220086867F /* Wifi.swift in Sources */,
@@ -299,7 +312,10 @@
 				ABDFA1F120BFF03E004AC553 /* AppDelegate.swift in Sources */,
 				AB9BE7F720C11FCC00025896 /* SwitchTableViewCell.swift in Sources */,
 				ABBDEC8720C2A4B20047E80C /* RealmService.swift in Sources */,
+				AB83DAB620C433C3001CCBAC /* BluetoothViewController.swift in Sources */,
+				AB83DAB220C3FCA9001CCBAC /* CellularViewController.swift in Sources */,
 				ABBDEC8B20C2C1600047E80C /* SettingsCellModel.swift in Sources */,
+				AB83DAB820C436B5001CCBAC /* NotificationsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -23,4 +23,8 @@ enum StringLiterals {
     static let wallpaper = "Wallpaper"
     static let display = "Display & BrightNess"
     
+    static let cellularData = "Cellular Data"
+    static let cellularDataOptions = "Cellular Data Options"
+    static let cellularDataSection0FooterText = "Turn off cellular data to restrict all data to Wi-Fi, including email, web browsing and push notifications."
+    
 }

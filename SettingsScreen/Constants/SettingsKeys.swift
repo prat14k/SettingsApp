@@ -34,6 +34,7 @@ enum SettingType {
     case general
     case wallpaper
     case display
+    case none
     
 }
 
