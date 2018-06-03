@@ -40,7 +40,7 @@ class SwitchTableViewCell: UITableViewCell {
     
     @IBAction func valueChanged(_ sender: UISwitch) {
         do {
-            try RealmService.shared.update(object: Settings.settings, with: [updationKey: sender.isOn, "carrier" : Carrier.connections[Int(arc4random_uniform(5))]])
+            try RealmService.shared.update(object: Settings.settings, with: [updationKey: sender.isOn])
         } catch {
             print(error)
         }

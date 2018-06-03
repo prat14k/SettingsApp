@@ -118,7 +118,45 @@ extension SettingsViewController: UITableViewDataSource {
     }
     
 }
-extension SettingsViewController: UITableViewDelegate { }
+extension SettingsViewController: UITableViewDelegate {
+    
+    func presentWifiOptions() {
+        let alertController = UIAlertController(title: nil, message: "Choose any one", preferredStyle: .actionSheet)
+        for wifi in WiFi.connections {
+            alertController.addAction(UIAlertAction(title: wifi.name, style: .default, handler: { (action) in
+                print(wifi)
+                try? RealmService.shared.update(object: Settings.settings, with: [SettingObserverKeys.wiFi.rawValue : wifi])
+            }))
+        }
+        alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        present(alertController, animated: true, completion: nil)
+    }
+    
+    func presentCarrierOptions() {
+        let alertController = UIAlertController(title: nil, message: "Choose any one", preferredStyle: .actionSheet)
+        for carrier in Carrier.connections {
+            alertController.addAction(UIAlertAction(title: carrier.name, style: .default, handler: { (action) in
+                print(carrier)
+                try? RealmService.shared.update(object: Settings.settings, with: [SettingObserverKeys.carrier.rawValue : carrier])
+            }))
+        }
+        alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        present(alertController, animated: true, completion: nil)
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cellType = tableDataSource[indexPath.section][indexPath.row].type
+        switch cellType {
+        case .wiFi:
+            presentWifiOptions()
+        case .carrier:
+            presentCarrierOptions()
+        default:
+            print("as")
+        }
+    }
+    
+}
 
 
 extension SettingsViewController: UISearchResultsUpdating {

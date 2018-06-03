@@ -132,11 +132,49 @@
                     <navigationItem key="navigationItem" id="4BU-i6-IRv"/>
                     <connections>
                         <outlet property="settingsTableView" destination="t0i-Ao-btz" id="MNG-DY-fIM"/>
+                        <segue destination="6m4-ZG-tSZ" kind="show" id="nyh-ST-FxA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="300" y="188.45577211394306"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="zZc-h3-KPI">
+            <objects>
+                <viewController id="6m4-ZG-tSZ" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lSy-Fj-E0h">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="nHq-bA-VJB">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="F7O-NL-y4L">
+                                        <rect key="frame" x="0.0" y="55.5" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="F7O-NL-y4L" id="ytG-ky-yvi">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="PWY-aO-mf1" firstAttribute="bottom" secondItem="nHq-bA-VJB" secondAttribute="bottom" id="MJ2-V0-XJ3"/>
+                            <constraint firstItem="nHq-bA-VJB" firstAttribute="top" secondItem="PWY-aO-mf1" secondAttribute="top" id="aB9-F2-Ybt"/>
+                            <constraint firstItem="PWY-aO-mf1" firstAttribute="trailing" secondItem="nHq-bA-VJB" secondAttribute="trailing" id="q11-sy-Tw7"/>
+                            <constraint firstItem="nHq-bA-VJB" firstAttribute="leading" secondItem="PWY-aO-mf1" secondAttribute="leading" id="ql3-kr-ovc"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="PWY-aO-mf1"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CVW-1l-mIy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1111" y="-13"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="HHS-6m-qkQ">
