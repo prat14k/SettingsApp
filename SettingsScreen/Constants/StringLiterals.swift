@@ -16,6 +16,7 @@ enum StringLiterals {
     static let wiFi = "Wi-Fi"
     static let bluetooth = "Bluetooth"
     static let mobileData = "Mobile Data"
+    static let cellular = "Cellular"
     static let carrier = "Carrier"
     static let notifications = "Notifications"
     static let doNotDisturb = "Do Not Disturb"
@@ -28,4 +29,11 @@ enum StringLiterals {
     static let cellularDataHelpText = "Turn off cellular data to restrict all data to Wi-Fi, including email, web browsing and push notifications."
     
     static let doNotDisturbHelpText = "When Do Not Disturb is enabled, calls and alerts that arrive while locked will be silenced, and a moon icon will appear in the status bar."
+    
+    static let accessibility = "Accessibility"
+    static let about = "About"
+    static let airDrop = "AirDrop"
+    static let handoff = "Handoff"
+    static let carPlay = "CarPlay"
+    static let softwareUpdate = "Software Update"
 }

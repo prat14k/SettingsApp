@@ -60,7 +60,7 @@ class SettingsViewController: UIViewController {
             if let vc = segue.destination as? SingleSettingViewController, let settingType = sender as? SettingType {
                 switch settingType {
                 case .mobileData:
-                    vc.navBarTitle = StringLiterals.mobileData
+                    vc.navBarTitle = StringLiterals.cellular
                     vc.tableDataSource = DataSource.cellularDataTableDB
                 case .bluetooth:
                     vc.navBarTitle = StringLiterals.bluetooth
@@ -71,6 +71,9 @@ class SettingsViewController: UIViewController {
                 case .doNotDisturb:
                     vc.navBarTitle = StringLiterals.doNotDisturb
                     vc.tableDataSource = DataSource.doNotDisturbTableDB
+                case .general:
+                    vc.navBarTitle = StringLiterals.general
+                    vc.tableDataSource = DataSource.generalSettingTableDB
                 default: print("Unknown Type")
                 }
             }
@@ -180,7 +183,9 @@ extension SettingsViewController: UITableViewDelegate {
             presentWifiOptions()
         case .carrier:
             presentCarrierOptions()
-        case .mobileData, .notifications, .bluetooth, .doNotDisturb:
+        case .display:
+            performSegue(withIdentifier: SegueIdentifier.displaySettingWindow, sender: nil)
+        case .mobileData, .notifications, .bluetooth, .doNotDisturb, .general:
             performSegue(withIdentifier: SegueIdentifier.toggledSettingWindow, sender: cellType)
         default:
             print("as")

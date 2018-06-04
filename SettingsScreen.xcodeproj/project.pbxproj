@@ -11,6 +11,7 @@
 		AB18040520C14AC00086867F /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB18040420C14AC00086867F /* Settings.swift */; };
 		AB18040720C14C220086867F /* Wifi.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB18040620C14C220086867F /* Wifi.swift */; };
 		AB18040920C14D970086867F /* Carrier.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB18040820C14D970086867F /* Carrier.swift */; };
+		AB47B81820C46A1B00A358F7 /* fontello.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AB47B81720C46A1A00A358F7 /* fontello.ttf */; };
 		AB83DAB220C3FCA9001CCBAC /* CellularViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB83DAB120C3FCA9001CCBAC /* CellularViewController.swift */; };
 		AB83DAB420C41790001CCBAC /* SegueIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB83DAB320C41790001CCBAC /* SegueIdentifiers.swift */; };
 		AB83DAB620C433C3001CCBAC /* BluetoothViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB83DAB520C433C3001CCBAC /* BluetoothViewController.swift */; };
@@ -37,6 +38,7 @@
 		AB18040420C14AC00086867F /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		AB18040620C14C220086867F /* Wifi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wifi.swift; sourceTree = "<group>"; };
 		AB18040820C14D970086867F /* Carrier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Carrier.swift; sourceTree = "<group>"; };
+		AB47B81720C46A1A00A358F7 /* fontello.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = fontello.ttf; sourceTree = "<group>"; };
 		AB83DAB120C3FCA9001CCBAC /* CellularViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellularViewController.swift; sourceTree = "<group>"; };
 		AB83DAB320C41790001CCBAC /* SegueIdentifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegueIdentifiers.swift; sourceTree = "<group>"; };
 		AB83DAB520C433C3001CCBAC /* BluetoothViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothViewController.swift; sourceTree = "<group>"; };
@@ -78,6 +80,14 @@
 				1FC6B31729495A99301584D9 /* Pods_SettingsScreen.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AB47B81920C46A2000A358F7 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				AB47B81720C46A1A00A358F7 /* fontello.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		AB83DAAE20C3DCAF001CCBAC /* TableViewCells */ = {
@@ -176,6 +186,7 @@
 				AB9BE7F420C11F5A00025896 /* Constants */,
 				AB9BE7F120C11DF400025896 /* Extensions */,
 				AB83DAAF20C3DCF0001CCBAC /* Helpers */,
+				AB47B81920C46A2000A358F7 /* Fonts */,
 				ABDFA1F020BFF03E004AC553 /* AppDelegate.swift */,
 				ABDFA1F720BFF040004AC553 /* Assets.xcassets */,
 				ABDFA1FC20BFF040004AC553 /* Info.plist */,
@@ -255,6 +266,7 @@
 				ABDFA1FB20BFF040004AC553 /* LaunchScreen.storyboard in Resources */,
 				ABDFA1F820BFF040004AC553 /* Assets.xcassets in Resources */,
 				ABDFA1F620BFF03E004AC553 /* Main.storyboard in Resources */,
+				AB47B81820C46A1B00A358F7 /* fontello.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

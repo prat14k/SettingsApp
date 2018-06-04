@@ -12,7 +12,7 @@ class CellularViewController: UIViewController {
 
     let tableDataSource: [SettingsCellModel] = [
         SwitchCellModel(title: StringLiterals.cellularData, key: SettingObserverKeys.mobileData, type: SettingType.mobileData),
-        DisclosureCellModel(title: StringLiterals.cellularDataOptions, type: SettingType.none)
+        DisclosureCellModel(title: StringLiterals.cellularDataOptions, type: SettingType.other)
     ]
     
     

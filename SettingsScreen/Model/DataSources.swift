@@ -16,7 +16,8 @@ enum DataSource {
     ]
     
     static let cellularDataTableDB = [
-        TableSectionModel(cellsData: [SwitchCellModel(title: StringLiterals.cellularData, key: SettingObserverKeys.mobileData, type: SettingType.mobileData),
+        TableSectionModel(cellsData: [
+                                      SwitchCellModel(title: StringLiterals.cellularData, key: SettingObserverKeys.mobileData, type: SettingType.mobileData),
                                       DisclosureCellModel(title: StringLiterals.cellularDataOptions, type: SettingType.mobileData)
                                     ], footer: StringLiterals.cellularDataHelpText)
     ]
@@ -29,4 +30,13 @@ enum DataSource {
         TableSectionModel(cellsData: [SwitchCellModel(title: StringLiterals.doNotDisturb, key: SettingObserverKeys.doNotDisturb, type: SettingType.doNotDisturb)], footer: StringLiterals.doNotDisturbHelpText)
     ]
 
+    static let generalSettingTableDB = [
+        TableSectionModel(cellsData: [DisclosureCellModel(title: StringLiterals.about, type: SettingType.other),
+                                    DisclosureCellModel(title: StringLiterals.softwareUpdate, type: SettingType.other)]),
+        TableSectionModel(cellsData: [DisclosureCellModel(title: StringLiterals.airDrop, type: SettingType.other),
+                                    DisclosureCellModel(title: StringLiterals.handoff, type: SettingType.other),
+                                    DisclosureCellModel(title: StringLiterals.carPlay, type: SettingType.other)]),
+        TableSectionModel(cellsData: [DisclosureCellModel(title: StringLiterals.accessibility, type: SettingType.other)])
+    ]
+    
 }
