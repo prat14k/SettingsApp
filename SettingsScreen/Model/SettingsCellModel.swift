@@ -6,7 +6,7 @@
 //  Copyright © 2018 Prateek Sharma. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 
 struct TableSectionModel {
@@ -25,30 +25,34 @@ struct TableSectionModel {
 protocol SettingsCellModel {
     var title: String { get }
     var type: SettingType { get }
+    var iconColor: UIColor? { get }
 }
 
 
 struct SwitchCellModel: SettingsCellModel{
-    let title: String
-    let key: SettingObserverKeys
-    let type: SettingType
     
-
-    init(title: String, key: SettingObserverKeys, type: SettingType) {
+    let title: String
+    let key: SettingKeys
+    let type: SettingType
+    let iconColor: UIColor?
+    
+    init(title: String, key: SettingKeys, type: SettingType, iconColor: UIColor? = nil) {
         self.title = title
         self.type = type
         self.key = key
+        self.iconColor = iconColor
     }
 }
 
 
-struct DisclosureCellModel: SettingsCellModel{
+struct ForwardingCellModel: SettingsCellModel{
     let title: String
     let type: SettingType
+    let iconColor: UIColor?
     
-    
-    init(title: String, type: SettingType) {
+    init(title: String, type: SettingType, iconColor: UIColor? = nil) {
         self.title = title
         self.type = type
+        self.iconColor = iconColor
     }
 }

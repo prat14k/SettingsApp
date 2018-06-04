@@ -1,5 +1,5 @@
 //
-//  DisclosureTableViewCell.swift
+//  ForwardingTableViewCell.swift
 //  SettingsScreen
 //
 //  Created by Prateek Sharma on 6/1/18.
@@ -8,13 +8,12 @@
 
 import UIKit
 
-class DisclosureTableViewCell: UITableViewCell {
+class ForwardingTableViewCell: UITableViewCell {
 
-    static let identifier = "disclosureCellIdentifier"
+    static let identifier = "forwardingCellIdentifier"
     
     @IBOutlet weak var coloredView: UIView! {
         didSet {
-            coloredView.backgroundColor = UIColor.random
             coloredView.layer.cornerRadius = 7
             coloredView.clipsToBounds = true
         }
@@ -29,11 +28,11 @@ class DisclosureTableViewCell: UITableViewCell {
         separatorInset = UIEdgeInsets(top: 0, left: title.frame.origin.x, bottom: 0, right: 0)
     }
     
-    
-    func setup(details: DisclosureCellModel, subtitle: String?) {
+    func setup(details: ForwardingCellModel, subtitle: String?, iconColor: UIColor? = nil) {
+        coloredView?.backgroundColor = iconColor
+        
         title.text = details.title
         subTitle.text = subtitle
-        
     }
     
 }

@@ -36,4 +36,6 @@ enum StringLiterals {
     static let handoff = "Handoff"
     static let carPlay = "CarPlay"
     static let softwareUpdate = "Software Update"
+    
+    static let settingsUpdateNotification = "SettingsUpdateNotification"
 }

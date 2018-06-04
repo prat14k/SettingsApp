@@ -9,7 +9,6 @@
 import UIKit
 
 
-
 class SwitchTableViewCell: UITableViewCell {
 
     static let identifier = "switchCellIdentifier"
@@ -18,7 +17,6 @@ class SwitchTableViewCell: UITableViewCell {
     
     @IBOutlet weak var coloredView: UIView! {
         didSet {
-            coloredView.backgroundColor = UIColor.random
             coloredView.layer.cornerRadius = 7
             coloredView.clipsToBounds = true
         }
@@ -27,7 +25,9 @@ class SwitchTableViewCell: UITableViewCell {
     @IBOutlet weak var toggleSwitch: UISwitch!
     
     
-    func setup(details: SwitchCellModel, isOn: Bool) {
+    func setup(details: SwitchCellModel, isOn: Bool, iconColor: UIColor? = nil) {
+        coloredView?.backgroundColor = iconColor
+        
         title.text = details.title
         updationKey = details.key.rawValue
         toggleSwitch.isOn = isOn
@@ -43,6 +43,7 @@ class SwitchTableViewCell: UITableViewCell {
     @IBAction func valueChanged(_ sender: UISwitch) {
         do {
             try RealmService.shared.update(object: Settings.settings, with: [updationKey: sender.isOn])
+            NotificationCenter.default.post(name: NSNotification.Name(StringLiterals.settingsUpdateNotification), object: nil)
         } catch {
             print(error)
         }

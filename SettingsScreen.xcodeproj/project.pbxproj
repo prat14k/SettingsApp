@@ -9,18 +9,13 @@
 /* Begin PBXBuildFile section */
 		44911EF133DF5477C65DAC89 /* Pods_SettingsScreen.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FC6B31729495A99301584D9 /* Pods_SettingsScreen.framework */; };
 		AB18040520C14AC00086867F /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB18040420C14AC00086867F /* Settings.swift */; };
-		AB18040720C14C220086867F /* Wifi.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB18040620C14C220086867F /* Wifi.swift */; };
-		AB18040920C14D970086867F /* Carrier.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB18040820C14D970086867F /* Carrier.swift */; };
+		AB18040720C14C220086867F /* BaseObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB18040620C14C220086867F /* BaseObjects.swift */; };
 		AB47B81820C46A1B00A358F7 /* fontello.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AB47B81720C46A1A00A358F7 /* fontello.ttf */; };
-		AB83DAB220C3FCA9001CCBAC /* CellularViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB83DAB120C3FCA9001CCBAC /* CellularViewController.swift */; };
 		AB83DAB420C41790001CCBAC /* SegueIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB83DAB320C41790001CCBAC /* SegueIdentifiers.swift */; };
-		AB83DAB620C433C3001CCBAC /* BluetoothViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB83DAB520C433C3001CCBAC /* BluetoothViewController.swift */; };
-		AB83DAB820C436B5001CCBAC /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB83DAB720C436B5001CCBAC /* NotificationsViewController.swift */; };
-		AB83DABA20C43808001CCBAC /* DataSources.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB83DAB920C43808001CCBAC /* DataSources.swift */; };
 		AB87217220C43F82008958CF /* SingleSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB87217120C43F82008958CF /* SingleSettingViewController.swift */; };
 		AB9BE7F320C11E0600025896 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9BE7F220C11E0600025896 /* UIColorExtension.swift */; };
 		AB9BE7F720C11FCC00025896 /* SwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9BE7F620C11FCC00025896 /* SwitchTableViewCell.swift */; };
-		AB9BE7F920C11FEB00025896 /* DisclosureTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9BE7F820C11FEB00025896 /* DisclosureTableViewCell.swift */; };
+		AB9BE7F920C11FEB00025896 /* ForwardingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9BE7F820C11FEB00025896 /* ForwardingTableViewCell.swift */; };
 		AB9BE80A20C13AB400025896 /* SettingsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9BE80920C13AB400025896 /* SettingsKeys.swift */; };
 		ABBDEC8720C2A4B20047E80C /* RealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBDEC8620C2A4B20047E80C /* RealmService.swift */; };
 		ABBDEC8920C2A6540047E80C /* StringLiterals.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBDEC8820C2A6540047E80C /* StringLiterals.swift */; };
@@ -36,18 +31,13 @@
 		1FC6B31729495A99301584D9 /* Pods_SettingsScreen.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SettingsScreen.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4C689748C3EC5DF6909E8B2 /* Pods-SettingsScreen.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SettingsScreen.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SettingsScreen/Pods-SettingsScreen.debug.xcconfig"; sourceTree = "<group>"; };
 		AB18040420C14AC00086867F /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
-		AB18040620C14C220086867F /* Wifi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wifi.swift; sourceTree = "<group>"; };
-		AB18040820C14D970086867F /* Carrier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Carrier.swift; sourceTree = "<group>"; };
+		AB18040620C14C220086867F /* BaseObjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseObjects.swift; sourceTree = "<group>"; };
 		AB47B81720C46A1A00A358F7 /* fontello.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = fontello.ttf; sourceTree = "<group>"; };
-		AB83DAB120C3FCA9001CCBAC /* CellularViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellularViewController.swift; sourceTree = "<group>"; };
 		AB83DAB320C41790001CCBAC /* SegueIdentifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegueIdentifiers.swift; sourceTree = "<group>"; };
-		AB83DAB520C433C3001CCBAC /* BluetoothViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothViewController.swift; sourceTree = "<group>"; };
-		AB83DAB720C436B5001CCBAC /* NotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
-		AB83DAB920C43808001CCBAC /* DataSources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSources.swift; sourceTree = "<group>"; };
 		AB87217120C43F82008958CF /* SingleSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleSettingViewController.swift; sourceTree = "<group>"; };
 		AB9BE7F220C11E0600025896 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		AB9BE7F620C11FCC00025896 /* SwitchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchTableViewCell.swift; sourceTree = "<group>"; };
-		AB9BE7F820C11FEB00025896 /* DisclosureTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisclosureTableViewCell.swift; sourceTree = "<group>"; };
+		AB9BE7F820C11FEB00025896 /* ForwardingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForwardingTableViewCell.swift; sourceTree = "<group>"; };
 		AB9BE80920C13AB400025896 /* SettingsKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsKeys.swift; sourceTree = "<group>"; };
 		ABBDEC8620C2A4B20047E80C /* RealmService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmService.swift; sourceTree = "<group>"; };
 		ABBDEC8820C2A6540047E80C /* StringLiterals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringLiterals.swift; sourceTree = "<group>"; };
@@ -94,7 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				AB9BE7F620C11FCC00025896 /* SwitchTableViewCell.swift */,
-				AB9BE7F820C11FEB00025896 /* DisclosureTableViewCell.swift */,
+				AB9BE7F820C11FEB00025896 /* ForwardingTableViewCell.swift */,
 			);
 			path = TableViewCells;
 			sourceTree = "<group>";
@@ -139,9 +129,6 @@
 			children = (
 				AB83DAAE20C3DCAF001CCBAC /* TableViewCells */,
 				ABDFA1F220BFF03E004AC553 /* SettingsViewController.swift */,
-				AB83DAB120C3FCA9001CCBAC /* CellularViewController.swift */,
-				AB83DAB520C433C3001CCBAC /* BluetoothViewController.swift */,
-				AB83DAB720C436B5001CCBAC /* NotificationsViewController.swift */,
 				AB87217120C43F82008958CF /* SingleSettingViewController.swift */,
 			);
 			path = Classes;
@@ -151,10 +138,8 @@
 			isa = PBXGroup;
 			children = (
 				AB18040420C14AC00086867F /* Settings.swift */,
-				AB18040620C14C220086867F /* Wifi.swift */,
-				AB18040820C14D970086867F /* Carrier.swift */,
+				AB18040620C14C220086867F /* BaseObjects.swift */,
 				ABBDEC8A20C2C1600047E80C /* SettingsCellModel.swift */,
-				AB83DAB920C43808001CCBAC /* DataSources.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -318,23 +303,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AB9BE7F920C11FEB00025896 /* DisclosureTableViewCell.swift in Sources */,
+				AB9BE7F920C11FEB00025896 /* ForwardingTableViewCell.swift in Sources */,
 				AB9BE80A20C13AB400025896 /* SettingsKeys.swift in Sources */,
 				AB9BE7F320C11E0600025896 /* UIColorExtension.swift in Sources */,
-				AB83DABA20C43808001CCBAC /* DataSources.swift in Sources */,
 				ABBDEC8920C2A6540047E80C /* StringLiterals.swift in Sources */,
 				AB83DAB420C41790001CCBAC /* SegueIdentifiers.swift in Sources */,
-				AB18040920C14D970086867F /* Carrier.swift in Sources */,
 				ABDFA1F320BFF03E004AC553 /* SettingsViewController.swift in Sources */,
-				AB18040720C14C220086867F /* Wifi.swift in Sources */,
+				AB18040720C14C220086867F /* BaseObjects.swift in Sources */,
 				AB18040520C14AC00086867F /* Settings.swift in Sources */,
 				ABDFA1F120BFF03E004AC553 /* AppDelegate.swift in Sources */,
 				AB9BE7F720C11FCC00025896 /* SwitchTableViewCell.swift in Sources */,
 				ABBDEC8720C2A4B20047E80C /* RealmService.swift in Sources */,
-				AB83DAB620C433C3001CCBAC /* BluetoothViewController.swift in Sources */,
-				AB83DAB220C3FCA9001CCBAC /* CellularViewController.swift in Sources */,
 				ABBDEC8B20C2C1600047E80C /* SettingsCellModel.swift in Sources */,
-				AB83DAB820C436B5001CCBAC /* NotificationsViewController.swift in Sources */,
 				AB87217220C43F82008958CF /* SingleSettingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

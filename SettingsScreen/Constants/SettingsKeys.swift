@@ -9,7 +9,7 @@
 import Foundation
 
 
-enum SettingObserverKeys: String {
+enum SettingKeys: String {
 
     case airplaneMode = "airplaneMode"
     case wiFi = "wiFi"
