@@ -37,5 +37,14 @@ enum StringLiterals {
     static let carPlay = "CarPlay"
     static let softwareUpdate = "Software Update"
     
+    static let nightShift = "Night Shift"
+    static let autoLock = "Auto-Lock"
+    static let textSize = "Text Size"
+    static let boldText = "Bold Text"
+    static let viewOption = "View"
+    
+    static let displaySectionTitle = "DISPLAY"
+    static let displayHelpText = "Choose a view for iPhone. Zoomed shows larger controls. Standard shows more content."
+    
     static let settingsUpdateNotification = "SettingsUpdateNotification"
 }

@@ -16,6 +16,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        if let splitViewController = window?.rootViewController as? UISplitViewController,
+           splitViewController.viewControllers.count > 1,
+           let detailsNavVC = splitViewController.viewControllers[1] as? UINavigationController,
+           let detailsVC = detailsNavVC.topViewController as? CommonSettingViewController {
+            
+            splitViewController.preferredDisplayMode = .allVisible
+            splitViewController.delegate = self
+            detailsVC.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem
+            detailsVC.navigationItem.leftItemsSupplementBackButton = true
+            
+        }
+        
         return true
     }
 
@@ -42,5 +55,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 
+}
+
+extension AppDelegate : UISplitViewControllerDelegate {
+    func splitViewController(_ splitViewController: UISplitViewController, collapseSecondary secondaryViewController: UIViewController, onto primaryViewController: UIViewController) -> Bool {
+        return true
+    }
 }
 

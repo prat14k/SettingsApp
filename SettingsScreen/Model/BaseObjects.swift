@@ -15,6 +15,7 @@ protocol BaseObjects {
     init(name: String)
 }
 extension BaseObjects {
+    
     static func connections<T>(with prefix: String) -> [T] where T: Object, T: BaseObjects {
         var objects = RealmService.shared.read(aClass: T.self)
         if objects.count == 0 {
@@ -41,26 +42,3 @@ extension BaseObjects {
     
 }
 
-
-final class WiFi: Object {
-    @objc dynamic var name: String = ""
-    convenience init(name: String) {
-        self.init()
-        self.name = name
-    }
-}
-extension WiFi: BaseObjects {
-    static let connections: [WiFi] = WiFi.connections(with: "Network")
-}
-
-
-final class Carrier: Object {
-    @objc dynamic var name: String = ""
-    convenience init(name: String) {
-        self.init()
-        self.name = name
-    }
-}
-extension Carrier: BaseObjects {
-    static let connections: [Carrier] = Carrier.connections(with: "Carrier")
-}

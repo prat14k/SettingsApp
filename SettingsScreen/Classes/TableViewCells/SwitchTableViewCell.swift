@@ -9,40 +9,33 @@
 import UIKit
 
 
-class SwitchTableViewCell: UITableViewCell {
+class SwitchTableViewCell: TitledTableViewCell {
 
+    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        isContentPaddingApplicable = true
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        isContentPaddingApplicable = true
+    }
+    
     static let identifier = "switchCellIdentifier"
     
-    var updationKey: String!
-    
-    @IBOutlet weak var coloredView: UIView! {
-        didSet {
-            coloredView.layer.cornerRadius = 7
-            coloredView.clipsToBounds = true
-        }
-    }
-    @IBOutlet weak var title: UILabel!
-    @IBOutlet weak var toggleSwitch: UISwitch!
+    private var settingKey: SettingKeys!
+    @IBOutlet weak private var toggleSwitch: UISwitch!
     
     
-    func setup(details: SwitchCellModel, isOn: Bool, iconColor: UIColor? = nil) {
-        coloredView?.backgroundColor = iconColor
-        
-        title.text = details.title
-        updationKey = details.key.rawValue
+    func setup(details: (TitledCellViewProtocol & KeyDefinedCellViewProtocol), isOn: Bool) {
+        settingKey = details.key
         toggleSwitch.isOn = isOn
+        super.setup(details: details)
     }
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        layoutMargins = UIEdgeInsets.zero
-        separatorInset = UIEdgeInsets(top: 0, left: title.frame.origin.x, bottom: 0, right: 0)
-    }
-    
-    
-    @IBAction func valueChanged(_ sender: UISwitch) {
+    @IBAction private func valueChanged(_ sender: UISwitch) {
         do {
-            try RealmService.shared.update(object: Settings.settings, with: [updationKey: sender.isOn])
+            try RealmService.shared.update(object: Settings.settings, with: [settingKey.rawValue: sender.isOn])
             NotificationCenter.default.post(name: NSNotification.Name(StringLiterals.settingsUpdateNotification), object: nil)
         } catch {
             print(error)
@@ -50,3 +43,16 @@ class SwitchTableViewCell: UITableViewCell {
     }
     
 }
+
+
+
+
+
+
+
+
+
+
+
+
+

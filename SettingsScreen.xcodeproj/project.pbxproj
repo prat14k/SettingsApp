@@ -12,14 +12,25 @@
 		AB18040720C14C220086867F /* BaseObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB18040620C14C220086867F /* BaseObjects.swift */; };
 		AB47B81820C46A1B00A358F7 /* fontello.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AB47B81720C46A1A00A358F7 /* fontello.ttf */; };
 		AB83DAB420C41790001CCBAC /* SegueIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB83DAB320C41790001CCBAC /* SegueIdentifiers.swift */; };
-		AB87217220C43F82008958CF /* SingleSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB87217120C43F82008958CF /* SingleSettingViewController.swift */; };
+		AB853A7D20C66C6E00E30182 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB853A7C20C66C6E00E30182 /* TableViewController.swift */; };
+		AB87217220C43F82008958CF /* CommonSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB87217120C43F82008958CF /* CommonSettingViewController.swift */; };
 		AB9BE7F320C11E0600025896 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9BE7F220C11E0600025896 /* UIColorExtension.swift */; };
 		AB9BE7F720C11FCC00025896 /* SwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9BE7F620C11FCC00025896 /* SwitchTableViewCell.swift */; };
 		AB9BE7F920C11FEB00025896 /* ForwardingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9BE7F820C11FEB00025896 /* ForwardingTableViewCell.swift */; };
 		AB9BE80A20C13AB400025896 /* SettingsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9BE80920C13AB400025896 /* SettingsKeys.swift */; };
+		ABA168A720C79C3B00028007 /* TitledTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA168A620C79C3B00028007 /* TitledTableViewCell.swift */; };
+		ABA168A920C79CAD00028007 /* IconSwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA168A820C79CAD00028007 /* IconSwitchTableViewCell.swift */; };
+		ABA168AB20C79CBB00028007 /* IconForwardingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA168AA20C79CBB00028007 /* IconForwardingTableViewCell.swift */; };
+		ABA168AD20C7A1B000028007 /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA168AC20C7A1B000028007 /* SettingsTableViewCell.swift */; };
+		ABA168B520C7E1E700028007 /* SliderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA168B420C7E1E700028007 /* SliderTableViewCell.swift */; };
+		ABA168B720C7ED8700028007 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA168B620C7ED8600028007 /* Extensions.swift */; };
+		ABA168B920C7EDB600028007 /* UIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA168B820C7EDB600028007 /* UIConstants.swift */; };
+		ABA168BB20C7EE8600028007 /* RoundingCorners.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA168BA20C7EE8600028007 /* RoundingCorners.swift */; };
+		ABA168BD20C7F35100028007 /* WiFiCarrierModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA168BC20C7F35100028007 /* WiFiCarrierModel.swift */; };
+		ABA168BF20C7FE0800028007 /* UnusedControllers.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABA168BE20C7FE0700028007 /* UnusedControllers.storyboard */; };
 		ABBDEC8720C2A4B20047E80C /* RealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBDEC8620C2A4B20047E80C /* RealmService.swift */; };
 		ABBDEC8920C2A6540047E80C /* StringLiterals.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBDEC8820C2A6540047E80C /* StringLiterals.swift */; };
-		ABBDEC8B20C2C1600047E80C /* SettingsCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBDEC8A20C2C1600047E80C /* SettingsCellModel.swift */; };
+		ABBDEC8B20C2C1600047E80C /* SettingsCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBDEC8A20C2C1600047E80C /* SettingsCellViewModel.swift */; };
 		ABDFA1F120BFF03E004AC553 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABDFA1F020BFF03E004AC553 /* AppDelegate.swift */; };
 		ABDFA1F320BFF03E004AC553 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABDFA1F220BFF03E004AC553 /* SettingsViewController.swift */; };
 		ABDFA1F620BFF03E004AC553 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABDFA1F420BFF03E004AC553 /* Main.storyboard */; };
@@ -34,14 +45,25 @@
 		AB18040620C14C220086867F /* BaseObjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseObjects.swift; sourceTree = "<group>"; };
 		AB47B81720C46A1A00A358F7 /* fontello.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = fontello.ttf; sourceTree = "<group>"; };
 		AB83DAB320C41790001CCBAC /* SegueIdentifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegueIdentifiers.swift; sourceTree = "<group>"; };
-		AB87217120C43F82008958CF /* SingleSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleSettingViewController.swift; sourceTree = "<group>"; };
+		AB853A7C20C66C6E00E30182 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		AB87217120C43F82008958CF /* CommonSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonSettingViewController.swift; sourceTree = "<group>"; };
 		AB9BE7F220C11E0600025896 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		AB9BE7F620C11FCC00025896 /* SwitchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchTableViewCell.swift; sourceTree = "<group>"; };
 		AB9BE7F820C11FEB00025896 /* ForwardingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForwardingTableViewCell.swift; sourceTree = "<group>"; };
 		AB9BE80920C13AB400025896 /* SettingsKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsKeys.swift; sourceTree = "<group>"; };
+		ABA168A620C79C3B00028007 /* TitledTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitledTableViewCell.swift; sourceTree = "<group>"; };
+		ABA168A820C79CAD00028007 /* IconSwitchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconSwitchTableViewCell.swift; sourceTree = "<group>"; };
+		ABA168AA20C79CBB00028007 /* IconForwardingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconForwardingTableViewCell.swift; sourceTree = "<group>"; };
+		ABA168AC20C7A1B000028007 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
+		ABA168B420C7E1E700028007 /* SliderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderTableViewCell.swift; sourceTree = "<group>"; };
+		ABA168B620C7ED8600028007 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		ABA168B820C7EDB600028007 /* UIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIConstants.swift; sourceTree = "<group>"; };
+		ABA168BA20C7EE8600028007 /* RoundingCorners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundingCorners.swift; sourceTree = "<group>"; };
+		ABA168BC20C7F35100028007 /* WiFiCarrierModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WiFiCarrierModel.swift; sourceTree = "<group>"; };
+		ABA168BE20C7FE0700028007 /* UnusedControllers.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UnusedControllers.storyboard; sourceTree = "<group>"; };
 		ABBDEC8620C2A4B20047E80C /* RealmService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmService.swift; sourceTree = "<group>"; };
 		ABBDEC8820C2A6540047E80C /* StringLiterals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringLiterals.swift; sourceTree = "<group>"; };
-		ABBDEC8A20C2C1600047E80C /* SettingsCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCellModel.swift; sourceTree = "<group>"; };
+		ABBDEC8A20C2C1600047E80C /* SettingsCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCellViewModel.swift; sourceTree = "<group>"; };
 		ABDFA1ED20BFF03E004AC553 /* SettingsScreen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SettingsScreen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABDFA1F020BFF03E004AC553 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ABDFA1F220BFF03E004AC553 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
@@ -83,8 +105,13 @@
 		AB83DAAE20C3DCAF001CCBAC /* TableViewCells */ = {
 			isa = PBXGroup;
 			children = (
+				ABA168A620C79C3B00028007 /* TitledTableViewCell.swift */,
 				AB9BE7F620C11FCC00025896 /* SwitchTableViewCell.swift */,
 				AB9BE7F820C11FEB00025896 /* ForwardingTableViewCell.swift */,
+				ABA168A820C79CAD00028007 /* IconSwitchTableViewCell.swift */,
+				ABA168AA20C79CBB00028007 /* IconForwardingTableViewCell.swift */,
+				ABA168AC20C7A1B000028007 /* SettingsTableViewCell.swift */,
+				ABA168B420C7E1E700028007 /* SliderTableViewCell.swift */,
 			);
 			path = TableViewCells;
 			sourceTree = "<group>";
@@ -93,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				ABBDEC8620C2A4B20047E80C /* RealmService.swift */,
+				ABA168BA20C7EE8600028007 /* RoundingCorners.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -102,6 +130,7 @@
 			children = (
 				ABDFA1F420BFF03E004AC553 /* Main.storyboard */,
 				ABDFA1F920BFF040004AC553 /* LaunchScreen.storyboard */,
+				ABA168BE20C7FE0700028007 /* UnusedControllers.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -110,6 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				AB9BE7F220C11E0600025896 /* UIColorExtension.swift */,
+				ABA168B620C7ED8600028007 /* Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -120,6 +150,7 @@
 				AB9BE80920C13AB400025896 /* SettingsKeys.swift */,
 				ABBDEC8820C2A6540047E80C /* StringLiterals.swift */,
 				AB83DAB320C41790001CCBAC /* SegueIdentifiers.swift */,
+				ABA168B820C7EDB600028007 /* UIConstants.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -129,7 +160,8 @@
 			children = (
 				AB83DAAE20C3DCAF001CCBAC /* TableViewCells */,
 				ABDFA1F220BFF03E004AC553 /* SettingsViewController.swift */,
-				AB87217120C43F82008958CF /* SingleSettingViewController.swift */,
+				AB87217120C43F82008958CF /* CommonSettingViewController.swift */,
+				AB853A7C20C66C6E00E30182 /* TableViewController.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -139,7 +171,8 @@
 			children = (
 				AB18040420C14AC00086867F /* Settings.swift */,
 				AB18040620C14C220086867F /* BaseObjects.swift */,
-				ABBDEC8A20C2C1600047E80C /* SettingsCellModel.swift */,
+				ABBDEC8A20C2C1600047E80C /* SettingsCellViewModel.swift */,
+				ABA168BC20C7F35100028007 /* WiFiCarrierModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -249,6 +282,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ABDFA1FB20BFF040004AC553 /* LaunchScreen.storyboard in Resources */,
+				ABA168BF20C7FE0800028007 /* UnusedControllers.storyboard in Resources */,
 				ABDFA1F820BFF040004AC553 /* Assets.xcassets in Resources */,
 				ABDFA1F620BFF03E004AC553 /* Main.storyboard in Resources */,
 				AB47B81820C46A1B00A358F7 /* fontello.ttf in Resources */,
@@ -304,18 +338,28 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB9BE7F920C11FEB00025896 /* ForwardingTableViewCell.swift in Sources */,
+				ABA168AB20C79CBB00028007 /* IconForwardingTableViewCell.swift in Sources */,
+				AB853A7D20C66C6E00E30182 /* TableViewController.swift in Sources */,
+				ABA168BD20C7F35100028007 /* WiFiCarrierModel.swift in Sources */,
 				AB9BE80A20C13AB400025896 /* SettingsKeys.swift in Sources */,
 				AB9BE7F320C11E0600025896 /* UIColorExtension.swift in Sources */,
+				ABA168AD20C7A1B000028007 /* SettingsTableViewCell.swift in Sources */,
+				ABA168B520C7E1E700028007 /* SliderTableViewCell.swift in Sources */,
+				ABA168A920C79CAD00028007 /* IconSwitchTableViewCell.swift in Sources */,
 				ABBDEC8920C2A6540047E80C /* StringLiterals.swift in Sources */,
 				AB83DAB420C41790001CCBAC /* SegueIdentifiers.swift in Sources */,
+				ABA168BB20C7EE8600028007 /* RoundingCorners.swift in Sources */,
 				ABDFA1F320BFF03E004AC553 /* SettingsViewController.swift in Sources */,
 				AB18040720C14C220086867F /* BaseObjects.swift in Sources */,
+				ABA168B720C7ED8700028007 /* Extensions.swift in Sources */,
 				AB18040520C14AC00086867F /* Settings.swift in Sources */,
 				ABDFA1F120BFF03E004AC553 /* AppDelegate.swift in Sources */,
 				AB9BE7F720C11FCC00025896 /* SwitchTableViewCell.swift in Sources */,
+				ABA168A720C79C3B00028007 /* TitledTableViewCell.swift in Sources */,
 				ABBDEC8720C2A4B20047E80C /* RealmService.swift in Sources */,
-				ABBDEC8B20C2C1600047E80C /* SettingsCellModel.swift in Sources */,
-				AB87217220C43F82008958CF /* SingleSettingViewController.swift in Sources */,
+				ABA168B920C7EDB600028007 /* UIConstants.swift in Sources */,
+				ABBDEC8B20C2C1600047E80C /* SettingsCellViewModel.swift in Sources */,
+				AB87217220C43F82008958CF /* CommonSettingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
