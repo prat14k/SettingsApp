@@ -15,9 +15,7 @@ class RealmService {
     
     private init() {}
     let realm = try! Realm()
-    
     static let shared = RealmService()
-    
 }
 
 extension RealmService {

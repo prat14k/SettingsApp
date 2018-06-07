@@ -32,7 +32,7 @@ extension BaseObjects {
         for object in objects {
             alertController.addAction(UIAlertAction(title: object.name, style: .default, handler: { (action) in
                 print(object)
-                try? RealmService.shared.update(object: Settings.settings, with: [key : object])
+                try? RealmService.shared.update(object: Settings.settings, with: [key: object])
                 NotificationCenter.default.post(name: NSNotification.Name(StringLiterals.settingsUpdateNotification), object: nil)
             }))
         }

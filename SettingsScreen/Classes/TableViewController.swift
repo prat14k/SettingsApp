@@ -12,10 +12,9 @@ import UIKit
 
 class TableVC: UITableViewController, Maskable, RoundedSection {
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if UIScreen.isSplit {
-            let roundedCorners = corners(for: indexPath.row, withTotalSectionRows: tableView.numberOfRows(inSection: indexPath.section))
-            round(corners: roundedCorners, view: cell)
-        }
+        guard UIScreen.isSplit  else { return }
+        let roundedCorners = corners(for: indexPath.row, withTotalSectionRows: tableView.numberOfRows(inSection: indexPath.section))
+        round(corners: roundedCorners, view: cell)
     }
 }
 

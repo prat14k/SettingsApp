@@ -16,13 +16,11 @@ extension UITableViewHeaderFooterView {
         }
         set(newFrame) {
             var frame = newFrame
-            
             if UIScreen.isSplit {
                 let indent = UITableView.indent()
                 frame.origin.x   += indent
                 frame.size.width -= indent * 2
             }
-            
             super.frame = frame
         }
     }
@@ -38,8 +36,8 @@ extension UIScreen {
 
 
 extension UIDevice {
-    static let isIPad:       Bool = current.userInterfaceIdiom == .pad
-    static let isIPhone:     Bool = current.userInterfaceIdiom == .phone
+    static let isIPad: Bool = current.userInterfaceIdiom == .pad
+    static let isIPhone: Bool = current.userInterfaceIdiom == .phone
     class var isLandscape: Bool {
         let statusBarOrientation = UIApplication.shared.statusBarOrientation
         return statusBarOrientation == .landscapeLeft || statusBarOrientation == .landscapeRight
@@ -50,7 +48,7 @@ extension UIDevice {
 extension UITableView {
     
     static let indentByDeviceOrientation: (portrait: CGFloat, landscape: CGFloat) = {
-        return UIDevice.isIPad ? (portrait:  20, landscape:  90) : (portrait:  0, landscape:  10)
+        return UIDevice.isIPad ? (portrait: 20, landscape: 90) : (portrait: 0, landscape: 10)
     }()
     
     class func indent(isLandscape: Bool = UIDevice.isLandscape) -> CGFloat {

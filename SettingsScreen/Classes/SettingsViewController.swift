@@ -105,8 +105,7 @@ extension SettingsViewController: UITableViewDataSource {
         let cellData = isFiltering ? filteredSettings[indexPath.row] : tableDataSource[indexPath.section].cellsData[indexPath.row]
         if let switchCellData = cellData as? IconColoredSwitchCellViewModel {
             return setupSwitchCell(using: switchCellData, for: indexPath)
-        }
-        else if let forwardingCellData = cellData as? IconColoredForwardingCellViewModel {
+        } else if let forwardingCellData = cellData as? IconColoredForwardingCellViewModel {
             return setupForwardingCell(using: forwardingCellData, for: indexPath)
         }
         return UITableViewCell()
@@ -121,10 +120,10 @@ extension SettingsViewController {
         let cell = settingsTableView.dequeueReusableCell(withIdentifier: IconForwardingTableViewCell.identifier, for: indexPath) as! IconForwardingTableViewCell
         var subtitle: String?
         switch forwardingCellData.type {
-            case SettingType.wiFi : subtitle = Settings.settings.wiFi?.name
-            case SettingType.carrier : subtitle = Settings.settings.carrier?.name
-            case SettingType.bluetooth : subtitle = Settings.settings.bluetooth ? "On" : "Off"
-            default : subtitle = ""
+            case SettingType.wiFi: subtitle = Settings.settings.wiFi?.name
+            case SettingType.carrier: subtitle = Settings.settings.carrier?.name
+            case SettingType.bluetooth: subtitle = Settings.settings.bluetooth ? "On" : "Off"
+            default: subtitle = ""
         }
         cell.setup(details: forwardingCellData, subtitle: subtitle)
         return cell
