@@ -13,21 +13,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
+    func setupSplitViewController() {
+        guard let splitViewController = window?.rootViewController as? UISplitViewController,
+            splitViewController.viewControllers.count > 1,
+            let detailsNavVC = splitViewController.viewControllers[1] as? UINavigationController,
+            let detailsVC = detailsNavVC.topViewController as? CommonSettingViewController
+        else { return }
+            
+        splitViewController.preferredDisplayMode = .allVisible
+        splitViewController.delegate = self
+        detailsVC.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem
+        detailsVC.navigationItem.leftItemsSupplementBackButton = true
+    }
+    
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        if let splitViewController = window?.rootViewController as? UISplitViewController,
-           splitViewController.viewControllers.count > 1,
-           let detailsNavVC = splitViewController.viewControllers[1] as? UINavigationController,
-           let detailsVC = detailsNavVC.topViewController as? CommonSettingViewController {
-            
-            splitViewController.preferredDisplayMode = .allVisible
-            splitViewController.delegate = self
-            detailsVC.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem
-            detailsVC.navigationItem.leftItemsSupplementBackButton = true
-            
-        }
+        setupSplitViewController()
         
         return true
     }

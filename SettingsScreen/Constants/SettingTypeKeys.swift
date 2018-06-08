@@ -9,7 +9,7 @@
 import Foundation
 
 
-enum SettingKeys: String {
+enum SettingTypeKeys: String {
 
     case airplaneMode = "airplaneMode"
     case wiFi = "wiFi"
@@ -18,24 +18,11 @@ enum SettingKeys: String {
     case carrier = "carrier"
     case notifications = "notifications"
     case doNotDisturb = "doNotDisturb"
-    case none
-}
-
-
-enum SettingType {
-    
-    case airplaneMode
-    case wiFi
-    case bluetooth
-    case mobileData
-    case carrier
-    case notifications
-    case doNotDisturb
     case general
     case wallpaper
     case display
     case other
-    
 }
+
 
 

@@ -23,12 +23,12 @@ class SwitchTableViewCell: TitledTableViewCell {
     
     static let identifier = "switchCellIdentifier"
     
-    private var settingKey: SettingKeys!
+    private var settingKey: SettingTypeKeys!
     @IBOutlet weak private var toggleSwitch: UISwitch!
     
     
-    func setup(details: (TitledCellViewProtocol & KeyDefinedCellViewProtocol), isOn: Bool) {
-        settingKey = details.key
+    func setup(details: (TitledCellViewProtocol & TypeCellViewProtocol), isOn: Bool) {
+        settingKey = details.type
         toggleSwitch.isOn = isOn
         super.setup(details: details)
     }

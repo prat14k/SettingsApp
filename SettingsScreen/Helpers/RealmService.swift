@@ -25,15 +25,15 @@ extension RealmService {
         return objects.map { $0 }
     }
     
-    func create<T: Object>(object: T) throws {
+    func create(object: Object) throws {
         try write { realm.add(object) }
     }
     
-    func create<T: Object>(objects: [T]) throws {
+    func create(objects: [Object]) throws {
         try write { realm.add(objects) }
     }
     
-    func update<T: Object>(object: T, with dictionary: [String:Any?]) throws {
+    func update(object: Object, with dictionary: [String:Any?]) throws {
         try write {
             for (key, value) in dictionary {
                 object.setValue(value, forKey: key)
@@ -41,7 +41,7 @@ extension RealmService {
         }
     }
     
-    func delete<T: Object>(object: T) throws {
+    func delete(object: Object) throws {
         try write { realm.delete(object) }
     }
     

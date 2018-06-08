@@ -23,6 +23,13 @@ class TitledTableViewCell: SettingsTableViewCell {
     private let identifier = "titledCellIdentifier"
     
     @IBOutlet weak private var title: UILabel!
+    @IBOutlet weak private var separatorLine: UIView!
+    
+    
+    func showSeparator(rowNumber: Int, totalSectionRows: Int) {
+        separatorLine?.alpha = rowNumber == (totalSectionRows - 1) ? 0 : 1
+    }
+    
     
     func setup(details: TitledCellViewProtocol) {
         title.text = details.title

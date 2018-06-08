@@ -16,20 +16,20 @@ class SettingsViewController: UIViewController {
     
     private let tableDataSource: [TableSectionModel] = [
                         TableSectionModel(cellsData: [
-                            IconColoredSwitchCellViewModel(title: StringLiterals.airplaneMode, key: SettingKeys.airplaneMode, type: SettingType.airplaneMode, iconColor: UIColor(r: 255, g: 150, b: 0)),
-                            IconColoredForwardingCellViewModel(title: StringLiterals.wiFi, type: SettingType.wiFi, iconColor: UIColor(r: 0, g: 118, b: 255)),
-                            IconColoredForwardingCellViewModel(title: StringLiterals.bluetooth, type: SettingType.bluetooth, iconColor: UIColor(r: 254, g: 56, b: 36)),
-                            IconColoredForwardingCellViewModel(title: StringLiterals.mobileData, type: SettingType.mobileData, iconColor: UIColor(r: 0, g: 118, b: 255)),
-                            IconColoredForwardingCellViewModel(title: StringLiterals.carrier, type: SettingType.carrier, iconColor: UIColor(r: 0, g: 118, b: 255))
+                            IconColoredSwitchCellViewModel(title: StringLiterals.airplaneMode, type: SettingTypeKeys.airplaneMode, iconColor: UIColor(r: 255, g: 150, b: 0)),
+                            IconColoredForwardingCellViewModel(title: StringLiterals.wiFi, type: SettingTypeKeys.wiFi, iconColor: UIColor(r: 0, g: 118, b: 255)),
+                            IconColoredForwardingCellViewModel(title: StringLiterals.bluetooth, type: SettingTypeKeys.bluetooth, iconColor: UIColor(r: 254, g: 56, b: 36)),
+                            IconColoredForwardingCellViewModel(title: StringLiterals.mobileData, type: SettingTypeKeys.mobileData, iconColor: UIColor(r: 0, g: 118, b: 255)),
+                            IconColoredForwardingCellViewModel(title: StringLiterals.carrier, type: SettingTypeKeys.carrier, iconColor: UIColor(r: 0, g: 118, b: 255))
                             ]),
                         TableSectionModel(cellsData: [
-                                IconColoredForwardingCellViewModel(title: StringLiterals.notifications, type: SettingType.notifications, iconColor: UIColor(r: 254, g: 56, b: 36)),
-                                IconColoredForwardingCellViewModel(title: StringLiterals.doNotDisturb, type: SettingType.doNotDisturb, iconColor: UIColor(r: 254, g: 40, b: 81))
+                                IconColoredForwardingCellViewModel(title: StringLiterals.notifications, type: SettingTypeKeys.notifications, iconColor: UIColor(r: 254, g: 56, b: 36)),
+                                IconColoredForwardingCellViewModel(title: StringLiterals.doNotDisturb, type: SettingTypeKeys.doNotDisturb, iconColor: UIColor(r: 254, g: 40, b: 81))
                             ]),
                         TableSectionModel(cellsData: [
-                                IconColoredForwardingCellViewModel(title: StringLiterals.general, type: SettingType.general, iconColor: UIColor(r: 143, g: 142, b: 148)),
-                                IconColoredForwardingCellViewModel(title: StringLiterals.wallpaper, type: SettingType.wallpaper, iconColor: UIColor(r: 84, g: 199, b: 252)),
-                                IconColoredForwardingCellViewModel(title: StringLiterals.display, type: SettingType.display, iconColor: UIColor(r: 0, g: 118, b: 255))
+                                IconColoredForwardingCellViewModel(title: StringLiterals.general, type: SettingTypeKeys.general, iconColor: UIColor(r: 143, g: 142, b: 148)),
+                                IconColoredForwardingCellViewModel(title: StringLiterals.wallpaper, type: SettingTypeKeys.wallpaper, iconColor: UIColor(r: 84, g: 199, b: 252)),
+                                IconColoredForwardingCellViewModel(title: StringLiterals.display, type: SettingTypeKeys.display, iconColor: UIColor(r: 0, g: 118, b: 255))
                             ])
                         ]
     
@@ -60,9 +60,9 @@ class SettingsViewController: UIViewController {
         vc.navigationItem.leftItemsSupplementBackButton = true
         if segue.identifier == SegueIdentifier.commonSettingWindow,
            let commonSettingVC = vc as? CommonSettingViewController,
-           let settingType = sender as? SettingType {
+           let SettingTypeKeys = sender as? SettingTypeKeys {
             
-            commonSettingVC.settingType = settingType
+            commonSettingVC.settingTypeKeys = SettingTypeKeys
             
         }
     }
@@ -120,9 +120,9 @@ extension SettingsViewController {
         let cell = settingsTableView.dequeueReusableCell(withIdentifier: IconForwardingTableViewCell.identifier, for: indexPath) as! IconForwardingTableViewCell
         var subtitle: String?
         switch forwardingCellData.type {
-            case SettingType.wiFi: subtitle = Settings.settings.wiFi?.name
-            case SettingType.carrier: subtitle = Settings.settings.carrier?.name
-            case SettingType.bluetooth: subtitle = Settings.settings.bluetooth ? "On" : "Off"
+            case SettingTypeKeys.wiFi: subtitle = Settings.settings.wiFi?.name
+            case SettingTypeKeys.carrier: subtitle = Settings.settings.carrier?.name
+            case SettingTypeKeys.bluetooth: subtitle = Settings.settings.bluetooth ? "On" : "Off"
             default: subtitle = ""
         }
         cell.setup(details: forwardingCellData, subtitle: subtitle)
@@ -131,7 +131,7 @@ extension SettingsViewController {
 
     private func setupSwitchCell(using switchCellData: IconColoredSwitchCellViewModel, for indexPath: IndexPath) -> UITableViewCell {
         let cell = settingsTableView.dequeueReusableCell(withIdentifier: IconSwitchTableViewCell.identifier, for: indexPath) as! IconSwitchTableViewCell
-        cell.setup(details: switchCellData, isOn: Settings.settings.value(forKey: switchCellData.key.rawValue) as! Bool)
+        cell.setup(details: switchCellData, isOn: Settings.settings.value(forKey: switchCellData.type.rawValue) as! Bool)
         return cell
     }
 
@@ -146,9 +146,9 @@ extension SettingsViewController: UITableViewDelegate {
         let cellType = isFiltering ? filteredSettings[indexPath.row].type : tableDataSource[indexPath.section].cellsData[indexPath.row].type
         switch cellType {
         case .wiFi:
-            presentAlert(controller: WiFi.alertForPresenting(objects: WiFi.connections, keyToUpdate: SettingKeys.wiFi.rawValue), sourceView: tableView.cellForRow(at: indexPath))
+            presentAlert(controller: WiFi.alertForPresenting(objects: WiFi.connections, keyToUpdate: SettingTypeKeys.wiFi.rawValue), sourceView: tableView.cellForRow(at: indexPath))
         case .carrier:
-            presentAlert(controller: Carrier.alertForPresenting(objects: Carrier.connections, keyToUpdate: SettingKeys.carrier.rawValue), sourceView: tableView.cellForRow(at: indexPath))
+            presentAlert(controller: Carrier.alertForPresenting(objects: Carrier.connections, keyToUpdate: SettingTypeKeys.carrier.rawValue), sourceView: tableView.cellForRow(at: indexPath))
         case .display:
             performSegue(withIdentifier: SegueIdentifier.displaySettingWindow, sender: nil)
         case .mobileData, .notifications, .bluetooth, .doNotDisturb, .general:

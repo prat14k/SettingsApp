@@ -17,13 +17,13 @@
 		AB9BE7F320C11E0600025896 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9BE7F220C11E0600025896 /* UIColorExtension.swift */; };
 		AB9BE7F720C11FCC00025896 /* SwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9BE7F620C11FCC00025896 /* SwitchTableViewCell.swift */; };
 		AB9BE7F920C11FEB00025896 /* ForwardingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9BE7F820C11FEB00025896 /* ForwardingTableViewCell.swift */; };
-		AB9BE80A20C13AB400025896 /* SettingsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9BE80920C13AB400025896 /* SettingsKeys.swift */; };
+		AB9BE80A20C13AB400025896 /* SettingTypeKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9BE80920C13AB400025896 /* SettingTypeKeys.swift */; };
 		ABA168A720C79C3B00028007 /* TitledTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA168A620C79C3B00028007 /* TitledTableViewCell.swift */; };
 		ABA168A920C79CAD00028007 /* IconSwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA168A820C79CAD00028007 /* IconSwitchTableViewCell.swift */; };
 		ABA168AB20C79CBB00028007 /* IconForwardingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA168AA20C79CBB00028007 /* IconForwardingTableViewCell.swift */; };
 		ABA168AD20C7A1B000028007 /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA168AC20C7A1B000028007 /* SettingsTableViewCell.swift */; };
 		ABA168B520C7E1E700028007 /* SliderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA168B420C7E1E700028007 /* SliderTableViewCell.swift */; };
-		ABA168B720C7ED8700028007 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA168B620C7ED8600028007 /* Extensions.swift */; };
+		ABA168B720C7ED8700028007 /* ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA168B620C7ED8600028007 /* ViewControllerExtension.swift */; };
 		ABA168B920C7EDB600028007 /* UIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA168B820C7EDB600028007 /* UIConstants.swift */; };
 		ABA168BB20C7EE8600028007 /* RoundingCorners.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA168BA20C7EE8600028007 /* RoundingCorners.swift */; };
 		ABA168BD20C7F35100028007 /* WiFiCarrierModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA168BC20C7F35100028007 /* WiFiCarrierModel.swift */; };
@@ -31,6 +31,11 @@
 		ABBDEC8720C2A4B20047E80C /* RealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBDEC8620C2A4B20047E80C /* RealmService.swift */; };
 		ABBDEC8920C2A6540047E80C /* StringLiterals.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBDEC8820C2A6540047E80C /* StringLiterals.swift */; };
 		ABBDEC8B20C2C1600047E80C /* SettingsCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBDEC8A20C2C1600047E80C /* SettingsCellViewModel.swift */; };
+		ABD4DC2620CA80CB0096A2A7 /* TableHeaderFooterViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD4DC2520CA80CB0096A2A7 /* TableHeaderFooterViewExtension.swift */; };
+		ABD4DC2820CA80EC0096A2A7 /* ScreenExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD4DC2720CA80EC0096A2A7 /* ScreenExtension.swift */; };
+		ABD4DC2A20CA80F70096A2A7 /* DeviceExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD4DC2920CA80F70096A2A7 /* DeviceExtension.swift */; };
+		ABD4DC2C20CA81280096A2A7 /* TableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD4DC2B20CA81280096A2A7 /* TableViewExtension.swift */; };
+		ABD4DC2E20CA814D0096A2A7 /* AlertControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD4DC2D20CA814D0096A2A7 /* AlertControllerExtension.swift */; };
 		ABDFA1F120BFF03E004AC553 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABDFA1F020BFF03E004AC553 /* AppDelegate.swift */; };
 		ABDFA1F320BFF03E004AC553 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABDFA1F220BFF03E004AC553 /* SettingsViewController.swift */; };
 		ABDFA1F620BFF03E004AC553 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABDFA1F420BFF03E004AC553 /* Main.storyboard */; };
@@ -50,13 +55,13 @@
 		AB9BE7F220C11E0600025896 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		AB9BE7F620C11FCC00025896 /* SwitchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchTableViewCell.swift; sourceTree = "<group>"; };
 		AB9BE7F820C11FEB00025896 /* ForwardingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForwardingTableViewCell.swift; sourceTree = "<group>"; };
-		AB9BE80920C13AB400025896 /* SettingsKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsKeys.swift; sourceTree = "<group>"; };
+		AB9BE80920C13AB400025896 /* SettingTypeKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTypeKeys.swift; sourceTree = "<group>"; };
 		ABA168A620C79C3B00028007 /* TitledTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitledTableViewCell.swift; sourceTree = "<group>"; };
 		ABA168A820C79CAD00028007 /* IconSwitchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconSwitchTableViewCell.swift; sourceTree = "<group>"; };
 		ABA168AA20C79CBB00028007 /* IconForwardingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconForwardingTableViewCell.swift; sourceTree = "<group>"; };
 		ABA168AC20C7A1B000028007 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
 		ABA168B420C7E1E700028007 /* SliderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderTableViewCell.swift; sourceTree = "<group>"; };
-		ABA168B620C7ED8600028007 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		ABA168B620C7ED8600028007 /* ViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerExtension.swift; sourceTree = "<group>"; };
 		ABA168B820C7EDB600028007 /* UIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIConstants.swift; sourceTree = "<group>"; };
 		ABA168BA20C7EE8600028007 /* RoundingCorners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundingCorners.swift; sourceTree = "<group>"; };
 		ABA168BC20C7F35100028007 /* WiFiCarrierModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WiFiCarrierModel.swift; sourceTree = "<group>"; };
@@ -64,6 +69,11 @@
 		ABBDEC8620C2A4B20047E80C /* RealmService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmService.swift; sourceTree = "<group>"; };
 		ABBDEC8820C2A6540047E80C /* StringLiterals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringLiterals.swift; sourceTree = "<group>"; };
 		ABBDEC8A20C2C1600047E80C /* SettingsCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCellViewModel.swift; sourceTree = "<group>"; };
+		ABD4DC2520CA80CB0096A2A7 /* TableHeaderFooterViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableHeaderFooterViewExtension.swift; sourceTree = "<group>"; };
+		ABD4DC2720CA80EC0096A2A7 /* ScreenExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenExtension.swift; sourceTree = "<group>"; };
+		ABD4DC2920CA80F70096A2A7 /* DeviceExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceExtension.swift; sourceTree = "<group>"; };
+		ABD4DC2B20CA81280096A2A7 /* TableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewExtension.swift; sourceTree = "<group>"; };
+		ABD4DC2D20CA814D0096A2A7 /* AlertControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertControllerExtension.swift; sourceTree = "<group>"; };
 		ABDFA1ED20BFF03E004AC553 /* SettingsScreen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SettingsScreen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABDFA1F020BFF03E004AC553 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ABDFA1F220BFF03E004AC553 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
@@ -139,7 +149,12 @@
 			isa = PBXGroup;
 			children = (
 				AB9BE7F220C11E0600025896 /* UIColorExtension.swift */,
-				ABA168B620C7ED8600028007 /* Extensions.swift */,
+				ABA168B620C7ED8600028007 /* ViewControllerExtension.swift */,
+				ABD4DC2520CA80CB0096A2A7 /* TableHeaderFooterViewExtension.swift */,
+				ABD4DC2720CA80EC0096A2A7 /* ScreenExtension.swift */,
+				ABD4DC2920CA80F70096A2A7 /* DeviceExtension.swift */,
+				ABD4DC2B20CA81280096A2A7 /* TableViewExtension.swift */,
+				ABD4DC2D20CA814D0096A2A7 /* AlertControllerExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -147,7 +162,7 @@
 		AB9BE7F420C11F5A00025896 /* Constants */ = {
 			isa = PBXGroup;
 			children = (
-				AB9BE80920C13AB400025896 /* SettingsKeys.swift */,
+				AB9BE80920C13AB400025896 /* SettingTypeKeys.swift */,
 				ABBDEC8820C2A6540047E80C /* StringLiterals.swift */,
 				AB83DAB320C41790001CCBAC /* SegueIdentifiers.swift */,
 				ABA168B820C7EDB600028007 /* UIConstants.swift */,
@@ -341,17 +356,22 @@
 				ABA168AB20C79CBB00028007 /* IconForwardingTableViewCell.swift in Sources */,
 				AB853A7D20C66C6E00E30182 /* TableViewController.swift in Sources */,
 				ABA168BD20C7F35100028007 /* WiFiCarrierModel.swift in Sources */,
-				AB9BE80A20C13AB400025896 /* SettingsKeys.swift in Sources */,
+				AB9BE80A20C13AB400025896 /* SettingTypeKeys.swift in Sources */,
+				ABD4DC2A20CA80F70096A2A7 /* DeviceExtension.swift in Sources */,
 				AB9BE7F320C11E0600025896 /* UIColorExtension.swift in Sources */,
 				ABA168AD20C7A1B000028007 /* SettingsTableViewCell.swift in Sources */,
+				ABD4DC2620CA80CB0096A2A7 /* TableHeaderFooterViewExtension.swift in Sources */,
+				ABD4DC2C20CA81280096A2A7 /* TableViewExtension.swift in Sources */,
+				ABD4DC2E20CA814D0096A2A7 /* AlertControllerExtension.swift in Sources */,
 				ABA168B520C7E1E700028007 /* SliderTableViewCell.swift in Sources */,
 				ABA168A920C79CAD00028007 /* IconSwitchTableViewCell.swift in Sources */,
+				ABD4DC2820CA80EC0096A2A7 /* ScreenExtension.swift in Sources */,
 				ABBDEC8920C2A6540047E80C /* StringLiterals.swift in Sources */,
 				AB83DAB420C41790001CCBAC /* SegueIdentifiers.swift in Sources */,
 				ABA168BB20C7EE8600028007 /* RoundingCorners.swift in Sources */,
 				ABDFA1F320BFF03E004AC553 /* SettingsViewController.swift in Sources */,
 				AB18040720C14C220086867F /* BaseObjects.swift in Sources */,
-				ABA168B720C7ED8700028007 /* Extensions.swift in Sources */,
+				ABA168B720C7ED8700028007 /* ViewControllerExtension.swift in Sources */,
 				AB18040520C14AC00086867F /* Settings.swift in Sources */,
 				ABDFA1F120BFF03E004AC553 /* AppDelegate.swift in Sources */,
 				AB9BE7F720C11FCC00025896 /* SwitchTableViewCell.swift in Sources */,

@@ -16,6 +16,13 @@ class TableVC: UITableViewController, Maskable, RoundedSection {
         let roundedCorners = corners(for: indexPath.row, withTotalSectionRows: tableView.numberOfRows(inSection: indexPath.section))
         round(corners: roundedCorners, view: cell)
     }
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        
+        tableView.invalidateIntrinsicContentSize()
+        tableView.reloadData()
+    }
 }
 
 

@@ -10,7 +10,7 @@ import UIKit
 
 class CommonSettingViewController: UIViewController {
     
-    var settingType: SettingType! {
+    var settingTypeKeys: SettingTypeKeys! {
         didSet {
             setTableDataSource()
         }
@@ -28,7 +28,7 @@ class CommonSettingViewController: UIViewController {
     
     
     private func setTableDataSource() {
-        switch settingType {
+        switch settingTypeKeys {
         case .mobileData:
             navBarTitle = StringLiterals.cellular
             tableDataSource = TableDataSource.cellularDataTableDB
@@ -50,6 +50,18 @@ class CommonSettingViewController: UIViewController {
     
     
 }
+
+extension CommonSettingViewController {
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        
+        settingTableView.invalidateIntrinsicContentSize()
+        settingTableView.reloadData()
+    }
+    
+}
+
 
 extension CommonSettingViewController: UITableViewDataSource {
     
@@ -88,7 +100,8 @@ extension CommonSettingViewController {
     
     private func setupSwitchCell(using switchCellData: SwitchCellViewModel, for indexPath: IndexPath) -> UITableViewCell {
         let cell = settingTableView.dequeueReusableCell(withIdentifier: SwitchTableViewCell.identifier, for: indexPath) as! SwitchTableViewCell
-        cell.setup(details: switchCellData, isOn: Settings.settings.value(forKey: switchCellData.key.rawValue) as! Bool)
+        cell.setup(details: switchCellData, isOn: Settings.settings.value(forKey: switchCellData.type.rawValue) as! Bool)
+        cell.showSeparator(rowNumber: indexPath.row, totalSectionRows: settingTableView.numberOfRows(inSection: indexPath.section))
         return cell
     }
 }
@@ -122,31 +135,31 @@ extension CommonSettingViewController {
     private enum TableDataSource {
         
         static let bluetoothTableDB = [
-            TableSectionModel(cellsData: [SwitchCellViewModel(title: StringLiterals.bluetooth, key: SettingKeys.bluetooth, type: SettingType.bluetooth)])
+            TableSectionModel(cellsData: [SwitchCellViewModel(title: StringLiterals.bluetooth, type: SettingTypeKeys.bluetooth)])
         ]
         
         static let cellularDataTableDB = [
             TableSectionModel(cellsData: [
-                SwitchCellViewModel(title: StringLiterals.cellularData, key: SettingKeys.mobileData, type: SettingType.mobileData),
-                ForwardingCellViewModel(title: StringLiterals.cellularDataOptions, type: SettingType.mobileData)
+                SwitchCellViewModel(title: StringLiterals.cellularData, type: SettingTypeKeys.mobileData),
+                ForwardingCellViewModel(title: StringLiterals.cellularDataOptions, type: SettingTypeKeys.mobileData)
                 ], footer: StringLiterals.cellularDataHelpText)
         ]
         
         static let notificationsTableDB = [
-            TableSectionModel(cellsData: [SwitchCellViewModel(title: StringLiterals.notifications, key: SettingKeys.notifications, type: SettingType.notifications)])
+            TableSectionModel(cellsData: [SwitchCellViewModel(title: StringLiterals.notifications, type: SettingTypeKeys.notifications)])
         ]
         
         static let doNotDisturbTableDB = [
-            TableSectionModel(cellsData: [SwitchCellViewModel(title: StringLiterals.doNotDisturb, key: SettingKeys.doNotDisturb, type: SettingType.doNotDisturb)], footer: StringLiterals.doNotDisturbHelpText)
+            TableSectionModel(cellsData: [SwitchCellViewModel(title: StringLiterals.doNotDisturb, type: SettingTypeKeys.doNotDisturb)], footer: StringLiterals.doNotDisturbHelpText)
         ]
         
         static let generalSettingTableDB = [
-            TableSectionModel(cellsData: [ForwardingCellViewModel(title: StringLiterals.about, type: SettingType.other),
-                                          ForwardingCellViewModel(title: StringLiterals.softwareUpdate, type: SettingType.other)]),
-            TableSectionModel(cellsData: [ForwardingCellViewModel(title: StringLiterals.airDrop, type: SettingType.other),
-                                          ForwardingCellViewModel(title: StringLiterals.handoff, type: SettingType.other),
-                                          ForwardingCellViewModel(title: StringLiterals.carPlay, type: SettingType.other)]),
-            TableSectionModel(cellsData: [ForwardingCellViewModel(title: StringLiterals.accessibility, type: SettingType.other)])
+            TableSectionModel(cellsData: [ForwardingCellViewModel(title: StringLiterals.about, type: SettingTypeKeys.other),
+                                          ForwardingCellViewModel(title: StringLiterals.softwareUpdate, type: SettingTypeKeys.other)]),
+            TableSectionModel(cellsData: [ForwardingCellViewModel(title: StringLiterals.airDrop, type: SettingTypeKeys.other),
+                                          ForwardingCellViewModel(title: StringLiterals.handoff, type: SettingTypeKeys.other),
+                                          ForwardingCellViewModel(title: StringLiterals.carPlay, type: SettingTypeKeys.other)]),
+            TableSectionModel(cellsData: [ForwardingCellViewModel(title: StringLiterals.accessibility, type: SettingTypeKeys.other)])
         ]
         
     }

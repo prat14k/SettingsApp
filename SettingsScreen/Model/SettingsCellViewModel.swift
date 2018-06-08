@@ -28,38 +28,37 @@ protocol TitledCellViewProtocol: CellViewProtocol {
     var title: String { get }
 }
 protocol TypeCellViewProtocol: CellViewProtocol {
-    var type: SettingType { get }
+    var type: SettingTypeKeys { get }
 }
-protocol KeyDefinedCellViewProtocol: CellViewProtocol {
-    var key: SettingKeys { get }
-}
+//protocol KeyDefinedCellViewProtocol: CellViewProtocol {
+//    var key: SettingKeys { get }
+//}
 protocol IconColorCellViewProtocol: CellViewProtocol {
     var iconColor: UIColor? { get }
 }
 
 
-struct SwitchCellViewModel: TitledCellViewProtocol, KeyDefinedCellViewProtocol, TypeCellViewProtocol {
+struct SwitchCellViewModel: TitledCellViewProtocol, TypeCellViewProtocol {
     let title: String
-    let key: SettingKeys
-    let type: SettingType
+//    let key: SettingKeys
+    let type: SettingTypeKeys
 
-    init(title: String, key: SettingKeys, type: SettingType) {
+    init(title: String, type: SettingTypeKeys) {
         self.title = title
         self.type = type
-        self.key = key
     }
 }
 
-struct IconColoredSwitchCellViewModel: TitledCellViewProtocol, KeyDefinedCellViewProtocol, TypeCellViewProtocol, IconColorCellViewProtocol {
+struct IconColoredSwitchCellViewModel: TitledCellViewProtocol, TypeCellViewProtocol, IconColorCellViewProtocol {
     let title: String
-    let key: SettingKeys
-    let type: SettingType
+//    let key: SettingKeys
+    let type: SettingTypeKeys
     let iconColor: UIColor?
     
-    init(title: String, key: SettingKeys, type: SettingType, iconColor: UIColor? = nil) {
+    init(title: String, type: SettingTypeKeys, iconColor: UIColor? = nil) {
         self.title = title
         self.type = type
-        self.key = key
+//        self.key = key
         self.iconColor = iconColor
     }
 }
@@ -67,9 +66,9 @@ struct IconColoredSwitchCellViewModel: TitledCellViewProtocol, KeyDefinedCellVie
 
 struct ForwardingCellViewModel: TitledCellViewProtocol, TypeCellViewProtocol {
     let title: String
-    let type: SettingType
+    let type: SettingTypeKeys
 
-    init(title: String, type: SettingType) {
+    init(title: String, type: SettingTypeKeys) {
         self.title = title
         self.type = type
     }
@@ -77,10 +76,10 @@ struct ForwardingCellViewModel: TitledCellViewProtocol, TypeCellViewProtocol {
 
 struct IconColoredForwardingCellViewModel: TitledCellViewProtocol, TypeCellViewProtocol, IconColorCellViewProtocol {
     let title: String
-    let type: SettingType
+    let type: SettingTypeKeys
     let iconColor: UIColor?
     
-    init(title: String, type: SettingType, iconColor: UIColor? = nil) {
+    init(title: String, type: SettingTypeKeys, iconColor: UIColor? = nil) {
         self.title = title
         self.type = type
         self.iconColor = iconColor
