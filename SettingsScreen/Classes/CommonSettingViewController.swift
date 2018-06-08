@@ -95,6 +95,7 @@ extension CommonSettingViewController {
         case .mobileData: cell.setup(details: forwardingCellData, subtitle: "Roaming On")
         default: cell.setup(details: forwardingCellData, subtitle: "")
         }
+        cell.showSeparator(rowNumber: indexPath.row, totalSectionRows: settingTableView.numberOfRows(inSection: indexPath.section))
         return cell
     }
     
