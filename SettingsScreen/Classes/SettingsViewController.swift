@@ -126,12 +126,14 @@ extension SettingsViewController {
             default: subtitle = ""
         }
         cell.setup(details: forwardingCellData, subtitle: subtitle)
+        cell.showSeparator(rowNumber: indexPath.row, totalSectionRows: settingsTableView.numberOfRows(inSection: indexPath.section))
         return cell
     }
 
     private func setupSwitchCell(using switchCellData: IconColoredSwitchCellViewModel, for indexPath: IndexPath) -> UITableViewCell {
         let cell = settingsTableView.dequeueReusableCell(withIdentifier: IconSwitchTableViewCell.identifier, for: indexPath) as! IconSwitchTableViewCell
         cell.setup(details: switchCellData, isOn: Settings.settings.value(forKey: switchCellData.type.rawValue) as! Bool)
+        cell.showSeparator(rowNumber: indexPath.row, totalSectionRows: settingsTableView.numberOfRows(inSection: indexPath.section))
         return cell
     }
 
